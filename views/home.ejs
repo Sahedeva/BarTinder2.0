@@ -1,1 +1,11 @@
-home.ejs
+<body>
+<p><%=venue.url%></p>
+<style>
+	body {
+    background-image: url(<%=venue.logo_url%>);
+}
+</style>
+<form name="bar_button" action="/home" method="GET">
+    <input type="submit" name="submit" value="new_bar">
+</form>
+</body>
