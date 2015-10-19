@@ -1,28 +1,37 @@
+
+/********
+GENERAL
+********/
+
 body {
-<<<<<<< HEAD
-
-  padding: 50px;
-
-  background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/09/kitten-wallpaper-free.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-
-=======
-  padding: 50px;
-	background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/09/kitten-wallpaper-free.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%
->>>>>>> master
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #606060;
 }
 
-.nav {
-	font-weight: bold;
-	color: red;
-	font-size: 22px;
-	text-shadow: 1px 1px 1px black;
+
+
+/********
+HEADER
+********/
+
+.nav_header {
+	text-align: center;
+	font-size: 48px;
 }
 
-a {
-  color: #00B7FF;
-}
+
+
+/********
+NEW(ADMIN)
+********/
+
+
+
+
+
+
+/********
+FOOTER
+********/
+
+
+
