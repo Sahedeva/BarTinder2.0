@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
 
   padding: 50px;
 
@@ -6,7 +7,20 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
 
+=======
+  padding: 50px;
+	background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/09/kitten-wallpaper-free.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%
+>>>>>>> master
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.nav {
+	font-weight: bold;
+	color: red;
+	font-size: 22px;
+	text-shadow: 1px 1px 1px black;
 }
 
 a {
