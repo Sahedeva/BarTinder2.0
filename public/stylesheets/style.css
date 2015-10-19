@@ -5,6 +5,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.nav {
+	font-weight: bold;
+	color: red;
+	font-size: 22px;
+	text-shadow: 1px 1px 1px black;
+}
+
 a {
   color: #00B7FF;
 }
