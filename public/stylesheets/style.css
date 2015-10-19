@@ -1,11 +1,11 @@
 body {
-<<<<<<< HEAD
+
   padding: 50px;
-=======
-	background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/09/kitten-wallpaper-free.jpg');
+
+  background-image: url('http://hdwallpapersfit.com/wp-content/uploads/2015/09/kitten-wallpaper-free.jpg');
   background-repeat: no-repeat;
-  background-size: 100%
->>>>>>> 32a6606a6ebfef799075743367575d00c393ae74
+  background-size: 100%;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
