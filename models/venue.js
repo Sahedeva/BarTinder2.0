@@ -14,7 +14,6 @@ var venueSchema = new mongoose.Schema({
   updated_at: Date
 });
 
-var Venue = mongoose.model('Venue', venueSchema);
 
 // Make this available to our other files
-module.exports = Venue;
+module.exports = mongoose.model('Venue', venueSchema);
