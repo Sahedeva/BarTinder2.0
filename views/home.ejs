@@ -1,15 +1,23 @@
 
+		
 		<% include ./partials/header %>
 
 			<!-- Possible modal for the bar information -->
-			<h2 class="venue_name"><%=venue.name%></h2>
+			<h2 class="venue_name" id="venue_info"><%=venue.name%></h2>
 			<div class="view_counter container-fluid">
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<style>
 					.view_counter	{
+
+    					/*background-image: url(<%=venue.logo_url%>);
+    					background-color: #000;
+    					/*opacity: .6;
+    					border: 5px solid black;*/
+
     					/*background-image: url(<%=venue.logo_url%>);*/
     					/*background-image: url("../images/firehouse.png");*/
     					/*opacity: .6;*/
+
 				}
 				</style>
 			</div>
@@ -25,3 +33,13 @@
          </nav>
 
 		<% include ./partials/footer %>
+
+		 <script>
+		 $('#venue_info').on('click', function() {
+		 	$('#venue_info').append('<ul><li>Location:  <%=venue.location%></li><li>Hours:  <%=venue.hours%></li></ul>')
+		 });
+
+
+
+
+		 </script>
