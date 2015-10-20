@@ -1,11 +1,28 @@
-<body>
-<p><%=venue.url%></p>
-<style>
-	body {
-    background-image: url(<%=venue.logo_url%>);
-}
-</style>
-<form name="bar_button" action="/home" method="GET">
-    <input type="submit" name="submit" value="new_bar">
-</form>
-</body>
+
+		<% include ./partials/header %>
+
+			<!-- Possible modal for the bar information -->
+			<h2 class="venue_name"><%=venue.name%></h2>
+			<div class="view_counter container-fluid">
+				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
+				<style>
+					.view_counter	{
+    					/*background-image: url(<%=venue.logo_url%>);
+    					background-color: #000;
+*/    				background-image: url("../images/easy_tiger.jpg");
+    					/*opacity: .6;
+    					border: 5px solid black;*/
+				}
+				</style>
+			</div>
+			<div class="comment_box container-fluid">
+			</div>
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="footbox">
+               <form name="bar_button" action="/home" method="GET">
+			    		<input class="newbar-btn" type="submit" name="submit" value="Next Bar">
+					</form>
+            </div>
+         </nav>
+
+		<% include ./partials/footer %>
