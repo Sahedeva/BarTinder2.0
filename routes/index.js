@@ -18,8 +18,8 @@ router.get('/setup', function(req, res) {
 
   // create a sample user
   var john = new User({
-    name: 'John Doe',
-    password: 'myawesomepassword',
+    name: 'Why',
+    password: 'word',
     admin: true
   });
 
@@ -32,8 +32,8 @@ router.get('/setup', function(req, res) {
   });
 });
 
-router.get('/registration', function(req, res, next) {
-	res.render('registration', {title: 'Registration'});
+router.get('/register', function(req, res, next) {
+	res.render('register', {title: 'Registration'});
 });
 
 router.post('/new_user', function(req,res,next){
