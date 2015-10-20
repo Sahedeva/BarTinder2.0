@@ -3,18 +3,24 @@ GENERAL
 ********/
 
 body {
+/*	background-image: url("../brick.jpg");
+	background-size: 175%;*/
+/*	background-image: url("../grey.jpg");
+	background-size: 330%;
+	background-repeat: no-repeat;*/
 	background-color: #606060;
 }
 
 .navbar {
 	background-color: #444;
+	/*background-color: black;*/
 	height: 82px;
 }
 
 .page_title {
 	color: white;
 	font-weight: 300;
-	font-family: 'Shadows Into Light Two', cursive;
+	font-family: 'Comfortaa', cursive;
 	text-decoration: underline;
 }
 
@@ -22,7 +28,11 @@ body {
 	border-radius: 5px;
 	background-color: white;
 	text-align: center;
-	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Comfortaa', cursive;
+	font-size: 700;
+	font-size: 18px;
+	width: 80px;
+	height: 30px;
 }
 
 
@@ -33,22 +43,36 @@ NAVHEADER
 
 .nav_header {
 	text-align: center;
-	font-size: 48px;
-	font-family: 'Shadows Into Light', cursive;
 	color: white;
 }
 
+.bar {
+	text-align: center;
+	font-size: 42px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 700;
+}
+
+.tinder {
+	text-align: center;
+	font-size: 42px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	color: #999;
+}
+
 .navbox {
-	margin-top: 1.5%;
+	padding-top: 8px;
+	padding-right: 8px;
+	font-size: 8px;
 }
 
 .navlink {
 	color: white;
-	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Comfortaa', cursive;
 	float: right;
 	margin-right: 5%;
 }
-
 
 
 /********
@@ -57,26 +81,25 @@ NEW(ADMIN)
 
 .new_admin {
 	text-align: center;
-	margin-top: 50%;
-	margin-bottom: 50%;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 
 input {
 	border: 2px solid black;
-	border-radius: 2%;
+	border-radius: 5px;
 }
 
 .footbox {
 	text-align: center;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
-
 
 
 /********
 NAVFOOTER
 ********/
-
-
 
 
 
