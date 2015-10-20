@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var bcrypt = require('bcrypt');
+var config = require('../config');
+var jwt = require('jsonwebtoken');
 var User = require('../models/user'); // get our mongoose model
 var Venue = require('../models/venue');
 var mongoose = require('mongoose');
@@ -10,6 +13,98 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Bartinder' });
 
 });
+
+router.get('/setup', function(req, res) {
+
+  // create a sample user
+  var john = new User({
+    name: 'Why',
+    password: 'word',
+    admin: true
+  });
+
+  // save the sample user
+  john.save(function(err) {
+    if (err) throw err;
+
+    console.log('User saved successfully');
+    res.json({ success: true });
+  });
+});
+
+router.get('/register', function(req, res, next) {
+	res.render('register', {title: 'Registration'});
+});
+
+router.post('/new_user', function(req,res,next){
+	var name = req.body.name;
+	var password = req.body.password;
+	var admin = req.body.admin;
+	var new_user = new User({
+		name: name, 
+		password: password, 
+		admin: admin
+	});
+
+	new_user.save(function(err) {
+    if (err) throw err;
+
+    console.log('User saved successfully');
+   
+  });
+  res.redirect('/login');
+});
+
+
+router.get('/login', function(req, res, next) {
+	res.render('login', {title: 'Login'});
+});
+
+router.get('/users', function(req, res) {
+  User.find({}, function(err, users) {
+    res.json(users);
+  });
+});
+
+router.post('/authenticate', function(req, res) {
+	var name = req.body.name;
+	var password = req.body.password;
+
+  User.findOne({
+    name: name
+  }, function(err, user) {
+
+    if (err) throw err;
+
+    if (!user) {
+      res.json({ success: false, message: 'Authentication failed. User not found.' });
+    }
+    else if (user) {
+
+      bcrypt.compare(password, user.password, function(err, result) {
+        if (!result) {
+          res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+        }
+        else {
+          // if user is found and password is right
+          // create a token
+          var token = jwt.sign(user, config.secret, {
+            expiresInMinutes: 1440 // expires in 24 hours
+          });
+
+          // return the information including token as JSON
+          res.json({
+            success: true,
+            message: 'Enjoy your token!',
+            token: token
+          });
+        }
+      });
+
+    }
+  });
+
+});
 // Get another picture when an arrow is hit
 router.get('/home', function(req, res) {
 	Venue.find({}, function(err, venues) {
@@ -18,6 +113,7 @@ router.get('/home', function(req, res) {
 	console.log(venue)
 	res.render('home')
 	});
+});
 
 router.get('/new', function(req, res, next) {
 	res.render('new', {title: 'New Venue', venue_response: venue_response});
@@ -39,5 +135,4 @@ router.post('/new_venue', function(req,res,next){
 		res.redirect('/new');
 	});
 });
-
 module.exports = router;
