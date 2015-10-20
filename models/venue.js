@@ -15,5 +15,8 @@ var venueSchema = new mongoose.Schema({
 });
 
 
+
+
+
 // Make this available to our other files
 module.exports = mongoose.model('Venue', venueSchema);
