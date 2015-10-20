@@ -117,7 +117,10 @@ HOME(VIEW)
 	color: white;
 }
 
+/* Some styles had to be put inline in the home.ejs because the image url's would not pull into through this css file*/
 .view_counter {
+	background-size: 100%;
+	background-repeat: no-repeat;
 	width: 250px;
 	height: 250px;
 	margin-top: 25px;
