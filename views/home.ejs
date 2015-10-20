@@ -14,10 +14,7 @@
     					/*opacity: .6;
     					border: 5px solid black;*/
 
-    					/*background-image: url(<%=venue.logo_url%>);*/
-    					/*background-image: url("../images/firehouse.png");*/
-    					/*opacity: .6;*/
-
+    					background-image: url("../images/firehouse.png");
 				}
 				</style>
 			</div>
@@ -32,14 +29,10 @@
             </div>
          </nav>
 
-		<% include ./partials/footer %>
+		   <script>
+				$('#venue_info').on('click', function() {
+					$('#venue_info').append('<ul><li>Location:  <%=venue.location%></li><li>Hours:  <%=venue.hours%></li></ul>')
+				});
+		   </script>
 
-		 <script>
-		 $('#venue_info').on('click', function() {
-		 	$('#venue_info').append('<ul><li>Location:  <%=venue.location%></li><li>Hours:  <%=venue.hours%></li></ul>')
-		 });
-
-
-
-
-		 </script>
+		 <% include ./partials/footer %>
