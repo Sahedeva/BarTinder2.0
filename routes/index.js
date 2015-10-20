@@ -5,6 +5,7 @@ var config = require('../config');
 var jwt = require('jsonwebtoken');
 var User = require('../models/user'); // get our mongoose model
 var Venue = require('../models/venue');
+var Token = require('../models/token');
 var mongoose = require('mongoose');
 var venue_response = "";
 /* GET home page. */
@@ -39,7 +40,7 @@ router.get('/register', function(req, res, next) {
 router.post('/new_user', function(req,res,next){
 	var name = req.body.name;
 	var password = req.body.password;
-	var admin = req.body.admin;
+	var admin = true;
 	var new_user = new User({
 		name: name, 
 		password: password, 
@@ -93,6 +94,17 @@ router.post('/authenticate', function(req, res) {
           });
 
           // return the information including token as JSON
+          var user_id = user['_id'];
+          var new_token = new Token({
+            token: token,
+            user_id: user_id
+          });
+          new_token.save(function(err) {
+            if (err) throw err;
+
+            console.log('Token saved successfully');
+   
+          });
           res.json({
             success: true,
             message: 'Enjoy your token!',
