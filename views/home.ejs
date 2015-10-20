@@ -2,14 +2,14 @@
 		<% include ./partials/header %>
 
 			<!-- Possible modal for the bar information -->
-			<h2 class="venue_name"><%=venue.name%></h2>
+			<h2 class="venue_name" id="venue_info"><%=venue.name%></h2>
 			<div class="view_counter container-fluid">
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<style>
 					.view_counter	{
     					/*background-image: url(<%=venue.logo_url%>);
     					background-color: #000;
-*/    				background-image: url("../images/easy_tiger.jpg");
+*/    				background-image: url(<%=venue.logo_url%>);
     					/*opacity: .6;
     					border: 5px solid black;*/
 				}
