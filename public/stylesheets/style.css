@@ -5,15 +5,14 @@ GENERAL
 body {
 /*	background-image: url("../brick.jpg");
 	background-size: 175%;*/
-/*	background-image: url("../grey.jpg");
+/*	background-image: url("../images/grey.jpg");
 	background-size: 330%;
 	background-repeat: no-repeat;*/
 	background-color: #606060;
 }
 
 .navbar {
-	background-color: #444;
-	/*background-color: black;*/
+	background-color: black;
 	height: 82px;
 }
 
@@ -24,15 +23,17 @@ body {
 	text-decoration: underline;
 }
 
-.submit-btn {
-	border-radius: 5px;
-	background-color: white;
+.comment_box {
+	width: 250px;
+	height: 90px;
+	border: 5px solid white;
+	margin-top: -175px;
+}
+
+.footbox {
 	text-align: center;
-	font-family: 'Comfortaa', cursive;
-	font-size: 700;
-	font-size: 18px;
-	width: 80px;
-	height: 30px;
+	margin-top: 26px;
+	margin-bottom: 26px;
 }
 
 
@@ -90,10 +91,49 @@ input {
 	border-radius: 5px;
 }
 
-.footbox {
+.submit-btn {
+	border-radius: 5px;
+	background-color: white;
 	text-align: center;
-	margin-top: 26px;
-	margin-bottom: 26px;
+	font-family: 'Comfortaa', cursive;
+	font-size: 700;
+	font-size: 18px;
+	width: 80px;
+	height: 30px;
+}
+
+
+
+/********
+HOME(VIEW)
+********/
+
+.venue_name {
+	margin-top: 110px;
+	text-align: center;
+	font-size: 28px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	color: white;
+}
+
+.view_counter {
+	width: 250px;
+	height: 250px;
+	margin-top: 25px;
+	margin-bottom: 175px;
+	border: 5px solid white;
+}
+
+.newbar-btn {
+	border-radius: 5px;
+	background-color: white;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+	font-size: 700;
+	font-size: 18px;
+	width: 100px;
+	height: 30px;
 }
 
 
