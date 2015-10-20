@@ -1,22 +1,29 @@
-<% include ./partials/header %>
+      <% include ./partials/header %>
 
-<div class="container-fluid">
-   <div class="row">
-      <div class="venue_stats">
-         <form class="new_venue_form" name="new_venue_form" action="/new_venue" method="POST">
-      	<br><br><br>
-         <input type="text" name="name" placeholder="Venue Name..."><br><br>
-         <input type="text" name="location" placeholder="Venue Location..."><br><br>
-         <input type="text" name="hours" placeholder="Hours of Operation..."><br><br>
-          <input type="text" name="logo_url" placeholder="Logo URL..."><br><br>
-         <input type="text" name="website_url" placeholder="Website URL..."><br><br>
-         <input type="number" name="capacity" placeholder="Capacity..."><br><br>
-         <input style="display: none" type="text" name="comment" value="Come on in!" ><br><br>
-         <input style="display: none" type="number" name="patron_number" value = "0"><br><br>
-         <input type="submit" name="submit" value="Submit">
-         </form>
+      <div class="container-fluid">
+         <div class="venue_stats new_admin">
+            <h2 class="page_title">ADMIN:</h2>
+            <br>
+            <form class="new_venue_form" name="new_venue_form" action="/new_venue" method="POST">
+               <input type="text" name="name" placeholder="Venue Name...">
+               <br><br>
+               <input type="text" name="location" placeholder="Venue Location...">
+               <br><br>
+               <input type="text" name="hours" placeholder="Hours of Operation...">
+               <br><br>
+               <input type="text" name="logo_url" placeholder="Logo URL...">
+               <br><br>
+               <input type="text" name="website_url" placeholder="Website URL...">
+               <br><br>
+               <input type="number" name="capacity" placeholder="Capacity...">
+               <br><br>
+               <input style="display: none" type="text" name="comment" value="Come on in!" >
+               <input style="display: none" type="number" name="patron_number" value = "0">
+               <div class="footbox">
+                  <input class="submit-btn" type="submit" name="submit" value="Submit">
+               </div>
+            </form>
+         </div>
       </div>
-   </div>
-</div>
 
-<% include ./partials/footer %>
+      <% include ./partials/footer %>
