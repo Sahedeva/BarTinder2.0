@@ -15,8 +15,25 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/clicker', function(req, res, next) {
+  Venue.find({}, function(err, venues){
+    var name =venues[0]['name'];
+    var venue_id = venues[0]['_id'];
+    res.render('clicker', {name: name, venue_id: venue_id});
+  });
+});
+
 router.post('/clicker', function(req, res, next){
-  res.redirect('/clicker');
+  var access_token = req.body.access_token;
+  var patron_number = req.body.counter1;
+  var comment = req.body.comment;
+  var venue_id = req.body.venue_id;
+  Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment}, {new: true}, function(err, venue) {
+    res.json(venue);
+    if (err) {
+      console.log('got an error');
+    }
+  });
   });
 
 router.get('/setup', function(req, res) {
@@ -153,7 +170,7 @@ router.post('/new_venue', function(req,res,next){
 	var logo_url = req.body.logo_url;
 	var website_url = req.body.website_url;
 	var capacity = req.body.capacity;
-	var patron_number = req.body.capacity;
+	var patron_number = req.body.patron_number;
 	var comment = req.body.comment;
 	Venue.find({}, function(err, venue){
 		Venue.collection.insert({name: name, location: location, hours: hours, logo_url: logo_url, website_url: website_url, capacity: capacity, patron_number: patron_number, comment: comment});
