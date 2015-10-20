@@ -18,6 +18,7 @@ router.get('/home', function(req, res) {
 	console.log(venue)
 	res.render('home')
 	});
+});
 
 router.get('/new', function(req, res, next) {
 	res.render('new', {title: 'New Venue', venue_response: venue_response});
