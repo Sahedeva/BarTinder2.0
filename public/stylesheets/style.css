@@ -33,12 +33,6 @@ body {
 	color: white;
 }
 
-.footbox {
-	text-align: center;
-	margin-top: 26px;
-	margin-bottom: 26px;
-}
-
 
 
 /********
@@ -80,7 +74,7 @@ NAVHEADER
 
 
 /********
-NEW(ADMIN)
+NEW(VIEW)REGISTER
 ********/
 
 .new_admin {
@@ -94,15 +88,16 @@ input {
 	border-radius: 5px;
 }
 
-.submit-btn {
-	border-radius: 5px;
-	background-color: white;
+
+
+/********
+LOGIN(VIEW)
+********/
+
+.login {
 	text-align: center;
-	font-family: 'Comfortaa', cursive;
-	font-size: 700;
-	font-size: 18px;
-	width: 80px;
-	height: 30px;
+	margin-top: 200px;
+	margin-bottom: 100px;
 }
 
 
@@ -143,11 +138,27 @@ HOME(VIEW)
 }
 
 
+
 /********
 NAVFOOTER
 ********/
 
+.footbox {
+	text-align: center;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
 
+.submit-btn {
+	border-radius: 5px;
+	background-color: white;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+	font-size: 700;
+	font-size: 18px;
+	width: 80px;
+	height: 30px;
+}
 
 
 
