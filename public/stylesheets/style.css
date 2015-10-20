@@ -28,6 +28,9 @@ body {
 	height: 90px;
 	border: 5px solid white;
 	margin-top: -175px;
+	font-family: 'Comfortaa', cursive;
+	font-size: 18px;
+	color: white;
 }
 
 .footbox {
