@@ -35,9 +35,22 @@
 		<% include ./partials/footer %>
 
 		 <script>
+		 var clicks = 0;
+
 		 $('#venue_info').on('click', function() {
-		 	$('#venue_info').append('<ul><li>Location:  <%=venue.location%></li><li>Hours:  <%=venue.hours%></li></ul>')
-		 });
+  			clicks++
+  			if (clicks % 2 == 1) {
+  				console.log('odd click')
+		 		$('#venue_info').append('<ul><li>Location:  <%=venue.location%></li><li>Hours:  <%=venue.hours%></li></ul>')
+     // odd clicks
+  			} else {
+  				console.log('even click')
+		 		$('#venue_info').html('<%=venue.name%>')
+     // even clicks
+  			}
+		});
+
+
 
 
 
