@@ -4,10 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var config = require('./config');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var mongoose = require('mongoose');
 var app = express();
 
 // view engine setup
@@ -23,9 +23,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_DB_CONN_BARTINDER);
 
+mongoose.connect(process.env.MONGO_DB_CONN_BARTINDER);
+app.set('superSecret', config.secret);
 
 app.use('/', routes);
 app.use('/users', users);
