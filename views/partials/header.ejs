@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title><%= title %></title>
-      <link rel='stylesheet' href='/stylesheets/style.css'/>
+      <title>BarTinder</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel='stylesheet' href='stylesheets/normalize.css'/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-      <link rel='stylesheet' href='/stylesheets/style.css'/>
+      <link rel='stylesheet' href='stylesheets/style.css'/>
+      <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Shadows+Into+Light' rel='stylesheet' type='text/css'>
    </head>
    <body>
+
       <nav class="navbar navbar-default navbar-fixed-top">
-         <div class="container">
+         <div class="container-fluid">
             <div class="row">
-               <span class="col-xs-1">
-               <h1 class="col-xs-10">
-               <span class="col-xs-1">
+               <span class="col-xs-2"></span>
+               <a href="/home"><h1 class="nav_header col-xs-8"><span class="bar">Bar</span><span class="tinder">Tinder</span></h1></a>
+               <div class="navbox col-xs-2">
+                  <a class="navlink" href="/new">Register</a>
+                  <br>
+                  <a class="navlink" href="/login">Login</a>
+               </div>
             </div>
          </div>
       </nav>
