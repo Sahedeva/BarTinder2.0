@@ -6,6 +6,7 @@ var userSchema = new mongoose.Schema({
   name: String,
   password: String,
   admin: Boolean,
+  venue_id: String,
 });
 
 userSchema.pre('save', function(next) {

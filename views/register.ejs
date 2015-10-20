@@ -5,6 +5,11 @@
             <h2 class="page_title">ADMIN:</h2>
             <br>
             <form class="new_user_form" name="new_user_form" action="/new_user" method="POST">
+               <select name="venues">
+                  <% for (var i = 0; i<venue_name.length;i++){ %>
+                  <option value="<%= venue_id[i] %>"><%= venue_name[i] %></option>
+                  <% } %>
+               </select>
                <input type="text" name="name" placeholder="User Name">
                <br><br>
                <input type="password" name="password" placeholder="Password">

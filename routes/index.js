@@ -34,17 +34,27 @@ router.get('/setup', function(req, res) {
 });
 
 router.get('/register', function(req, res, next) {
-	res.render('register', {title: 'Registration'});
+  var venue_id = [];
+  var venue_name = [];
+  Venue.find({}, function(err, venues) {
+    for (var i = 0; i<venues.length; i++) {
+    venue_name[i] = venues[i]['name'];
+    venue_id[i] = venues[i]['_id'];
+    }
+  res.render('register', {title: 'Registration', venue_name: venue_name, venue_id: venue_id}); 
+  });
 });
 
 router.post('/new_user', function(req,res,next){
 	var name = req.body.name;
 	var password = req.body.password;
 	var admin = true;
+  var venue_id = req.body.venues;
 	var new_user = new User({
 		name: name, 
 		password: password, 
-		admin: admin
+		admin: admin,
+    venue_id: venue_id
 	});
 
 	new_user.save(function(err) {
