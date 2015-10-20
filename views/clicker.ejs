@@ -1,6 +1,16 @@
     <% include ./partials/header %>
 
-
+<form class="clicker" name="clicker" action="/clicker" method="POST">
+    <div>
+        <label for="name">In</label>
+        <input type="text" name="in" id="in-clicker" value="+">
+    </div>
+    <div>
+        <label for="name">Out</label>
+        <input type="text" name="out" id="out-clicker" value="-">
+    </div>
+    <input type="submit" value="Submit" id="submit">
+</form>
 
 
     	<input type="hidden" name="access_token" value="cookie_value">

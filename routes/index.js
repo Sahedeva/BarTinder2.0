@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/clicker', function(req, res, next){
+  res.redirect('/clicker');
+  });
+
 router.get('/setup', function(req, res) {
 
   // create a sample user
@@ -135,4 +139,9 @@ router.post('/new_venue', function(req,res,next){
 		res.redirect('/new');
 	});
 });
+
+
+
+
+
 module.exports = router;
