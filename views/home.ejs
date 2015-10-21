@@ -5,7 +5,7 @@
 			<!-- Possible modal for the bar information -->
 
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
-			<div id="disco_ball"></div>
+			<!-- <div id="disco_ball"></div> -->
 
 			<div class="view_counter container-fluid">
 
@@ -74,15 +74,15 @@
 			var capacity = $('#capacity').val();
 			var count_fraction = parseFloat(patron_number)/capacity;
 			console.log(count_fraction);
-			if (count_fraction <= 0.3){
+			if (count_fraction <= 0.15){
 				console.log("<15% red 1");
 				$('.patron_number').css('color', '#FF0000');
 			} 
-			else if (count_fraction <= 0.6){
+			else if (count_fraction <= 0.3){
 				console.log("<30% red 2");
 				$('.patron_number').css('color', '#CC0000');
 			} 
-			else if (count_fraction <= 0.3){
+			else if (count_fraction <= 0.45){
 				console.log("<45% yellow 1");
 				$('.patron_number').css('color', '#FFFF66');
 			}
@@ -90,18 +90,18 @@
 				console.log("<60% yellow 2");
 				$('.patron_number').css('color', '#FFF000');
 			} 
-			else if (count_fraction <= 0.3){
+			else if (count_fraction <= 0.75){
 				console.log("<75% green 1");
 				$('.patron_number').css('color', '#00CC66');
 			}
-			else if (count_fraction <= 0.3){
+			else if (count_fraction <= 0.9){
 				console.log("<90% green 2");
 				$('.patron_number').css('color', '#009933');
 			}    
 			else {
 				console.log(">90% disco");
 				// class name of disco div is animated bounceInLeft ///
-				$('#disco_ball').append('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" width="100" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
+				$('.patron_number').html('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" leftframeBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
 
 			} 
 	
