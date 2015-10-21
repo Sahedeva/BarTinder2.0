@@ -27,7 +27,7 @@ body {
 .comment_box {
 	background-color: black;
 	width: 180px;
-	height: 60px;
+	height: 75px;
 	border: 5px solid white;
 	margin-top: -175px;
 	font-family: 'Comfortaa', cursive;
@@ -47,6 +47,13 @@ body {
 /********
 NAVHEADER
 ********/
+
+.logo {
+	width: 40px;
+	height: 40px;
+	margin-right: 2px;
+	margin-top: -15px;
+}
 
 .nav_header {
 	text-align: center;
@@ -80,6 +87,18 @@ NAVHEADER
 	float: right;
 	margin-right: 5%;
 }
+
+
+
+/********
+INDEX(VIEW)
+********/
+
+.index {
+    color: #8C7252;
+    text-align: center; 
+}
+
 
 
 /********
@@ -137,8 +156,13 @@ LOGIN(VIEW)
 CLICKER(VIEW)
 ********/
 
+.clicker_box {
+	padding-left: 40px;
+	margin-top: 77px;
+}
+
 #clicker_name {
-	margin-top: 100px;
+	margin-top: 110px;
 	text-align: center;
 	color: white;
 	font-weight: 300;
@@ -169,6 +193,8 @@ CLICKER(VIEW)
 	font-size: 16px;
 	color: white;
 	opacity: .7;
+	margin-top: 50px;
+   margin-left: 57px;
 }
 
 .comment-submit-btn {
@@ -245,6 +271,19 @@ li {
 	margin-left: 5%;
 }
 
+.patron_number {
+	text-shadow: 1px 1px 1px black;
+}
+
+#disco {
+	 -webkit-animation-duration: 4s;
+	 width: 174px;
+	 height: 180px;
+	 position: relative;
+	 top: -24px;
+	 left: -2px;
+}
+
 
 
 /********
@@ -267,11 +306,6 @@ NAVFOOTER
 	width: 120px;
 	height: 48px;
 }
-
-.patron_number {
-	text-shadow: 1px 1px 1px black;
-}
-
 
 
 
