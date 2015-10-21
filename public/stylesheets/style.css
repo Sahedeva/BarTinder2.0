@@ -272,6 +272,11 @@ NAVFOOTER
 	text-shadow: 1px 1px 1px black;
 }
 
+#disco {
+  -webkit-animation-duration: 4s;
+}
+
+
 
 
 

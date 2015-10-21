@@ -1,9 +1,21 @@
-
+<head>
+	<link rel="stylesheet" href="animate.min.css">
+</head>
 		
 		<% include ./partials/header %>
+
+
+
+			<!-- Possible modal for the bar information -->
+
+			<h2 class="venue_name"   id="venue_info">
+				<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p><%=venue.name%></h2>
+
 		
-			<h2 class="venue_name" id="venue_info"><%=venue.name%></h2>
+			
+
 			<div class="view_counter container-fluid">
+
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<div class='patron_number'>
 					<%=venue.patron_number%>
