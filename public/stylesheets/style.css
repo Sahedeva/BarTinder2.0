@@ -312,8 +312,13 @@ li {
 }
 
 #disco {
+
+	/* -webkit-animation-duration: 1s;
+	 width: 174px;*/
+
 	 -webkit-animation-duration: 4s;
 	 width: 176px;
+
 	 height: 180px;
 	 position: relative;
 	 top: -24px;
