@@ -27,7 +27,7 @@ body {
 .comment_box {
 	background-color: black;
 	width: 180px;
-	height: 60px;
+	height: 75px;
 	border: 5px solid white;
 	margin-top: -175px;
 	font-family: 'Comfortaa', cursive;
@@ -156,8 +156,13 @@ LOGIN(VIEW)
 CLICKER(VIEW)
 ********/
 
+.clicker_box {
+	padding-left: 40px;
+	margin-top: 77px;
+}
+
 #clicker_name {
-	margin-top: 100px;
+	margin-top: 110px;
 	text-align: center;
 	color: white;
 	font-weight: 300;
@@ -188,6 +193,8 @@ CLICKER(VIEW)
 	font-size: 16px;
 	color: white;
 	opacity: .7;
+	margin-top: 50px;
+   margin-left: 57px;
 }
 
 .comment-submit-btn {
