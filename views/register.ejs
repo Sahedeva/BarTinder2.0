@@ -1,22 +1,24 @@
       <% include ./partials/header %>
 
       <div class="container-fluid">
-         <div class="venue_stats new_admin">
-            <h2 class="page_title">ADMIN:</h2>
+         <div class="venue_stats register">
+            <h2 class="page_title">Register:</h2>
             <br>
             <form class="new_user_form" name="new_user_form" action="/new_user" method="POST">
-               <select name="venues">
+               <input type="text" name="name" placeholder="User Name...">
+               <br><br>
+               <input type="password" name="password" placeholder="Password...">
+               <br><br>
+               <select class="venue_drop" name="venues">  <option>Choose Venue...</option>
                   <% for (var i = 0; i<venue_name.length;i++){ %>
                   <option value="<%= venue_id[i] %>"><%= venue_name[i] %></option>
                   <% } %>
                </select>
-               <input type="text" name="name" placeholder="User Name">
-               <br><br>
-               <input type="password" name="password" placeholder="Password">
-               <br><br>
-               <div class="footbox">
-                  <input class="submit-btn" type="submit" name="submit" value="Submit">
-               </div>
+               <nav class="navbar navbar-default navbar-fixed-bottom">
+                  <div class="footbox">
+                     <input class="submit-btn" type="submit" name="submit" value="Register">
+                  </div>
+               </nav>
             </form>
          </div>
       </div>
