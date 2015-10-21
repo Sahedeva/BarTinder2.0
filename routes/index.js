@@ -17,14 +17,21 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/clicker', function(req, res, next) {
-  Venue.find({}, function(err, venues){
-    var name =venues[0]['name'];
-    var venue_id = venues[0]['_id'];
-    res.render('clicker', {name: name, venue_id: venue_id});
+  var test = req.headers.cookie;
+  console.log("test: " + test.substring(11));
+  var token = test.substring(11);
+  Token.findOne({'token': token}, function(err, tokens){
+    User.findOne({'_id': tokens['user_id']}, function(err, users) {
+      Venue.findOne({'_id': users['venue_id']}, function(err, venues){
+        var name = venues['name'];
+        var venue_id = venues['_id'];
+        res.render('clicker', {name: name, venue_id: venue_id})
+      });
+    });
   });
 });
 
-router.post('/clicker', function(req, res, next){
+router.post('/tracked', function(req, res, next){
   var access_token = req.body.access_token;
   var patron_number = req.body.counter1;
   var comment = req.body.comment;
