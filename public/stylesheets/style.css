@@ -245,6 +245,14 @@ li {
 	margin-left: 5%;
 }
 
+.patron_number {
+	text-shadow: 1px 1px 1px black;
+}
+
+#disco {
+	 -webkit-animation-duration: 4s;
+}
+
 
 
 /********
@@ -267,16 +275,6 @@ NAVFOOTER
 	width: 120px;
 	height: 48px;
 }
-
-.patron_number {
-	text-shadow: 1px 1px 1px black;
-}
-
-#disco {
-  -webkit-animation-duration: 4s;
-}
-
-
 
 
 

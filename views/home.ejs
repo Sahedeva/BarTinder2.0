@@ -5,13 +5,12 @@
 		<% include ./partials/header %>
 
 
-
 			<!-- Possible modal for the bar information -->
 
-			<h2 class="venue_name"   id="venue_info">
-				<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p><%=venue.name%></h2>
+			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 
 		
+		<div id="disco_ball"></div>
 			
 
 			<div class="view_counter container-fluid">
@@ -108,6 +107,8 @@
 			else {
 				console.log(">90% disco");
 				// class name of disco div is animated bounceInLeft ///
+				$('#disco_ball').append('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" width="100" height="100" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
+
 			} 
 	
 		</script>
