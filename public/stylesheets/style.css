@@ -3,12 +3,12 @@ GENERAL
 ********/
 
 body {
-/*	background-image: url("../brick.jpg");
-	background-size: 175%;*/
+	background-image: url("../images/brick.jpg");
+	background-size: 175%;
 /*	background-image: url("../images/grey.jpg");
 	background-size: 330%;
 	background-repeat: no-repeat;*/
-	background-color: #606060;
+	/*background-color: #606060;*/
 }
 
 .navbar {
@@ -24,16 +24,15 @@ body {
 }
 
 .comment_box {
-	width: 250px;
-	height: 90px;
+	background-color: black;
+	width: 200px;
+	height: 60px;
 	border: 5px solid white;
 	margin-top: -175px;
-}
-
-.footbox {
-	text-align: center;
-	margin-top: 26px;
-	margin-bottom: 26px;
+	font-family: 'Comfortaa', cursive;
+	font-size: 16px;
+	color: white;
+	opacity: .8;
 }
 
 
@@ -77,7 +76,7 @@ NAVHEADER
 
 
 /********
-NEW(ADMIN)
+NEW(VIEW)
 ********/
 
 .new_admin {
@@ -91,14 +90,86 @@ input {
 	border-radius: 5px;
 }
 
-.submit-btn {
+
+
+/********
+REGISTER(VIEW)
+********/
+
+.register {
+	text-align: center;
+	margin-top: 170px;
+	margin-bottom: 100px;
+}
+
+.venue_drop {
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 152px;
+	height: 26px;
+	margin-right: 2px;
+}
+
+
+
+/********
+LOGIN(VIEW)
+********/
+
+.login {
+	text-align: center;
+	margin-top: 200px;
+	margin-bottom: 100px;
+}
+
+
+
+/********
+CLICKER(VIEW)
+********/
+
+#clicker_name {
+	margin-top: 100px;
+	text-align: center;
+	color: white;
+	font-weight: 300;
+	font-family: 'Comfortaa', cursive;
+	font-size: 28px;
+}
+
+.minus, .plus {
+	width: 75px;
+	height: 100px;
+	font-size: 42px;
+}
+
+.minus {
+	background-color: red;
+}
+
+.plus	{
+	background-color: green;
+}
+
+.change_comment {
+	background-color: black;
+	width: 200px;
+	height: 60px;
+	border: 5px solid white;
+	font-family: 'Comfortaa', cursive;
+	font-size: 16px;
+	color: white;
+	opacity: .8;
+}
+
+.comment-submit-btn {
 	border-radius: 5px;
 	background-color: white;
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
 	font-size: 18px;
-	width: 80px;
+	width: 200px;
 	height: 30px;
 }
 
@@ -117,15 +188,40 @@ HOME(VIEW)
 	color: white;
 }
 
+ul {
+	padding-top: 5px;
+}
+
+li {
+	font-size: 12px;
+	list-style: none;
+	text-align: left;
+	padding-left: 24px;
+}
+
+.info {
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
 /* Some styles had to be put inline in the home.ejs because the image url's would not pull into through this css file*/
+
 .view_counter {
 	background-size: 100%;
 	background-repeat: no-repeat;
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
 	margin-top: 25px;
 	margin-bottom: 175px;
 	border: 5px solid white;
+	text-align: center;
+	color: green;
+	font-size: 100px;
+	font-weight: bold;
 }
 
 .newbar-btn {
@@ -140,11 +236,27 @@ HOME(VIEW)
 }
 
 
+
 /********
 NAVFOOTER
 ********/
 
+.footbox {
+	text-align: center;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
 
+.submit-btn {
+	border-radius: 5px;
+	background-color: white;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+	font-size: 700;
+	font-size: 18px;
+	width: 90px;
+	height: 30px;
+}
 
 
 

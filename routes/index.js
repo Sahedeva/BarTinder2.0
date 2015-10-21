@@ -8,7 +8,9 @@ var Venue = require('../models/venue');
 var Token = require('../models/token');
 var mongoose = require('mongoose');
 var venue_response = "";
+
 var login_response = "";
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -17,36 +19,22 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/clicker', function(req, res, next) {
-  var user_cookie = {'_id': '56265602a7e6896a083e6e28', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NjI2NTYwMmE3ZTY4OTZhMDgzZTZlMjgiLCJuYW1lIjoicm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRiZ3lXbEkzREpsaFBKczNPRE5maU0uRVVwN1gwTXdidHlMSFAwOHdNaUEueWNGajl5dGZkTyIsImFkbWluIjp0cnVlLCJfX3YiOjB9.Y16QXYk_omncojPEHmaZSF88IweC_ntlo-RPW-F1CyA'};
- 
-  Token.find({}, function(err, tokens){
-    for (var i=0; i<tokens.length; i++){
-      if(user_cookie['_id']== token[i]['user_id']){
-        if(user_cookie['token'] == token[i]['token']){
-          User.findOne({'_id': user_cookie['_id']}, function(err, users){
-            var venue_id = users['venue_id'];
-            Venue.findOne({'_id': venue_id}, function(err, venues){
-              var name =venues[0]['name'];
-              var venue_id = venues[0]['_id'];
-              res.render('clicker', {name: name, venue_id: venue_id});
-            }); 
-          });
-        }
-      } 
-      else {
-        var login_response = "You are not an authorized user. Bye Felicia"
-        res.redirect('/login'); 
-      }
-    }
+
+  var test = req.headers.cookie;
+  console.log("test: " + test.substring(11));
+  var token = test.substring(11);
+  Token.findOne({'token': token}, function(err, tokens){
+    User.findOne({'_id': tokens['user_id']}, function(err, users) {
+      Venue.findOne({'_id': users['venue_id']}, function(err, venues){
+        var name = venues['name'];
+        var venue_id = venues['_id'];
+        res.render('clicker', {name: name, venue_id: venue_id})
+      });
+    });
   });
-  // Venue.find({}, function(err, venues){
-  //   var name =venues[0]['name'];
-  //   var venue_id = venues[0]['_id'];
-  //   res.render('clicker', {name: name, venue_id: venue_id});
-  // });
 });
 
-router.post('/clicker', function(req, res, next){
+router.post('/tracked', function(req, res, next){
   var access_token = req.body.access_token;
   var patron_number = req.body.counter1;
   var comment = req.body.comment;
@@ -177,7 +165,9 @@ router.get('/home', function(req, res) {
 // Get back a random variable from the database so you can display on page
 	venue = venues[Math.floor(Math.random()*venues.length)]
 	console.log(venue)
+
 	res.render('home')
+
 	});
 });
 
