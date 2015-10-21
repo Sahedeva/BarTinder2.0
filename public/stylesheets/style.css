@@ -258,6 +258,11 @@ NAVFOOTER
 	height: 30px;
 }
 
+#disco {
+  -webkit-animation-duration: 4s;
+}
+
+
 
 
 
