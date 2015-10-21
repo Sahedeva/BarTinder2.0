@@ -94,9 +94,19 @@ NAVHEADER
 INDEX(VIEW)
 ********/
 
+h3 {
+	margin-top: 10px;
+}
+
 .index {
-    color: #8C7252;
-    text-align: center; 
+   color: #8C7252;
+   text-align: center;
+   display: block;
+  	position: relative;
+  	background-color: black;
+  	opacity: .8;
+  	margin-top: 80px;
+  	margin-bottom: 80px;
 }
 
 
@@ -187,13 +197,13 @@ CLICKER(VIEW)
 .change_comment {
 	background-color: black;
 	width: 180px;
-	height: 60px;
+	height: 75px;
 	border: 5px solid white;
 	font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 	color: white;
 	opacity: .7;
-	margin-top: 50px;
+	margin-top: 45px;
    margin-left: 57px;
 }
 
