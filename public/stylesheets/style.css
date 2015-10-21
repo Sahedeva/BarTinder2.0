@@ -48,6 +48,13 @@ body {
 NAVHEADER
 ********/
 
+.logo {
+	width: 40px;
+	height: 40px;
+	margin-right: 2px;
+	margin-top: -15px;
+}
+
 .nav_header {
 	text-align: center;
 	color: white;
@@ -80,6 +87,18 @@ NAVHEADER
 	float: right;
 	margin-right: 5%;
 }
+
+
+
+/********
+INDEX(VIEW)
+********/
+
+.index {
+    color: #8C7252;
+    text-align: center; 
+}
+
 
 
 /********
@@ -251,6 +270,8 @@ li {
 
 #disco {
 	 -webkit-animation-duration: 4s;
+	 width: 100px;
+	 height: 100px;
 }
 
 
