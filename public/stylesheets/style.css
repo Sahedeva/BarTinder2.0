@@ -21,6 +21,7 @@ body {
 	font-weight: 300;
 	font-family: 'Comfortaa', cursive;
 	text-decoration: underline;
+	font-size: 34px;
 }
 
 .comment_box {
@@ -33,6 +34,12 @@ body {
 	font-size: 16px;
 	color: white;
 	opacity: .7;
+}
+
+.input_box {
+	width: 200px;
+	height: 30px;
+	font-size: 16px;
 }
 
 
@@ -98,16 +105,17 @@ REGISTER(VIEW)
 
 .register {
 	text-align: center;
-	margin-top: 170px;
+	margin-top: 160px;
 	margin-bottom: 100px;
 }
 
 .venue_drop {
 	border: 2px solid black;
 	border-radius: 5px;
-	width: 152px;
-	height: 26px;
-	margin-right: 2px;
+	width: 200px;
+	height: 30px;
+	margin-right: 4px;
+	font-size: 16px;
 }
 
 
@@ -118,8 +126,9 @@ LOGIN(VIEW)
 
 .login {
 	text-align: center;
-	margin-top: 200px;
+	margin-top: 180px;
 	margin-bottom: 100px;
+	font-size: 18px;
 }
 
 
