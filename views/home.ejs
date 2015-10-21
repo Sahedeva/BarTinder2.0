@@ -1,19 +1,28 @@
 
 		
 		<% include ./partials/header %>
-
-			<!-- Possible modal for the bar information -->
+		
 			<h2 class="venue_name" id="venue_info"><%=venue.name%></h2>
 			<div class="view_counter container-fluid">
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<%=venue.patron_number%>
 				<style>
-					.view_counter {
+					.view_counter::after {
 
     					/*background-image: url(<%=venue.logo_url%>);
 */
-						opacity: .7;
-    					background-image: url("../images/rio_rita.jpg");
+    					background-image: url("/images/rio_rita.jpg");
+    					width: 100%;
+						height: 100%;
+						background-size: 100%;
+    					content: "";
+  						opacity: 0.6;
+  						top: 0;
+					   left: 0;
+					   bottom: 0;
+					   right: 0;
+					   position: absolute;
+					   z-index: -1; 
 					}
 				</style>
 			</div>
@@ -23,7 +32,12 @@
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
                <form name="bar_button" action="/home" method="GET">
-			    		<input class="newbar-btn" type="submit" name="submit" value="Next Bar">
+			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+  							<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
+						</button>
+			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+  							Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+						</button>
 					</form>
             </div>
          </nav>
