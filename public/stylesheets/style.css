@@ -98,6 +98,10 @@ h3 {
 	margin-top: 10px;
 }
 
+h4 {
+	text-decoration: underline;
+}
+
 .index {
    color: #8C7252;
    text-align: center;
