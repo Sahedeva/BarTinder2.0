@@ -8,6 +8,7 @@ var Venue = require('../models/venue');
 var Token = require('../models/token');
 var mongoose = require('mongoose');
 var venue_response = "";
+var login_response = "";
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -16,11 +17,33 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/clicker', function(req, res, next) {
-  Venue.find({}, function(err, venues){
-    var name =venues[0]['name'];
-    var venue_id = venues[0]['_id'];
-    res.render('clicker', {name: name, venue_id: venue_id});
+  var user_cookie = {'_id': '56265602a7e6896a083e6e28', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NjI2NTYwMmE3ZTY4OTZhMDgzZTZlMjgiLCJuYW1lIjoicm9oaXQiLCJwYXNzd29yZCI6IiQyYSQxMCRiZ3lXbEkzREpsaFBKczNPRE5maU0uRVVwN1gwTXdidHlMSFAwOHdNaUEueWNGajl5dGZkTyIsImFkbWluIjp0cnVlLCJfX3YiOjB9.Y16QXYk_omncojPEHmaZSF88IweC_ntlo-RPW-F1CyA'};
+ 
+  Token.find({}, function(err, tokens){
+    for (var i=0; i<tokens.length; i++){
+      if(user_cookie['_id']== token[i]['user_id']){
+        if(user_cookie['token'] == token[i]['token']){
+          User.findOne({'_id': user_cookie['_id']}, function(err, users){
+            var venue_id = users['venue_id'];
+            Venue.findOne({'_id': venue_id}, function(err, venues){
+              var name =venues[0]['name'];
+              var venue_id = venues[0]['_id'];
+              res.render('clicker', {name: name, venue_id: venue_id});
+            }); 
+          });
+        }
+      } 
+      else {
+        var login_response = "You are not an authorized user. Bye Felicia"
+        res.redirect('/login'); 
+      }
+    }
   });
+  // Venue.find({}, function(err, venues){
+  //   var name =venues[0]['name'];
+  //   var venue_id = venues[0]['_id'];
+  //   res.render('clicker', {name: name, venue_id: venue_id});
+  // });
 });
 
 router.post('/clicker', function(req, res, next){
@@ -89,7 +112,7 @@ router.post('/new_user', function(req,res,next){
 
 
 router.get('/login', function(req, res, next) {
-	res.render('login', {title: 'Login'});
+	res.render('login', {title: 'Login', login_response: login_response});
 });
 
 router.get('/users', function(req, res) {
