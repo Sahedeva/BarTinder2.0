@@ -94,9 +94,19 @@ NAVHEADER
 INDEX(VIEW)
 ********/
 
+h3 {
+	margin-top: 10px;
+}
+
 .index {
-    color: #8C7252;
-    text-align: center; 
+   color: #8C7252;
+   text-align: center;
+   display: block;
+  	position: relative;
+  	background-color: black;
+  	opacity: .8;
+  	margin-top: 80px;
+  	margin-bottom: 80px;
 }
 
 
