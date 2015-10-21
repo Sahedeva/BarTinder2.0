@@ -270,8 +270,11 @@ li {
 
 #disco {
 	 -webkit-animation-duration: 4s;
-	 width: 100px;
-	 height: 100px;
+	 width: 174px;
+	 height: 180px;
+	 position: relative;
+	 top: -24px;
+	 left: -2px;
 }
 
 
