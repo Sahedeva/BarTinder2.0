@@ -94,6 +94,11 @@ h3 {
 	margin-top: 10px;
 }
 
+.about_img {
+   width: 140px;
+   height: auto;
+}
+
 h4 {
 	text-decoration: underline;
 }
