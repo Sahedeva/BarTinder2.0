@@ -21,18 +21,25 @@ body {
 	font-weight: 300;
 	font-family: 'Comfortaa', cursive;
 	text-decoration: underline;
+	font-size: 34px;
 }
 
 .comment_box {
 	background-color: black;
-	width: 200px;
+	width: 180px;
 	height: 60px;
 	border: 5px solid white;
 	margin-top: -175px;
 	font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 	color: white;
-	opacity: .8;
+	opacity: .7;
+}
+
+.input_box {
+	width: 200px;
+	height: 30px;
+	font-size: 16px;
 }
 
 
@@ -98,16 +105,17 @@ REGISTER(VIEW)
 
 .register {
 	text-align: center;
-	margin-top: 170px;
+	margin-top: 160px;
 	margin-bottom: 100px;
 }
 
 .venue_drop {
 	border: 2px solid black;
 	border-radius: 5px;
-	width: 152px;
-	height: 26px;
-	margin-right: 2px;
+	width: 200px;
+	height: 30px;
+	margin-right: 4px;
+	font-size: 16px;
 }
 
 
@@ -118,8 +126,9 @@ LOGIN(VIEW)
 
 .login {
 	text-align: center;
-	margin-top: 200px;
+	margin-top: 180px;
 	margin-bottom: 100px;
+	font-size: 18px;
 }
 
 
@@ -153,13 +162,13 @@ CLICKER(VIEW)
 
 .change_comment {
 	background-color: black;
-	width: 200px;
+	width: 180px;
 	height: 60px;
 	border: 5px solid white;
 	font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 	color: white;
-	opacity: .8;
+	opacity: .7;
 }
 
 .comment-submit-btn {
@@ -168,9 +177,9 @@ CLICKER(VIEW)
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
+	font-size: 20px;
 	width: 200px;
-	height: 30px;
+	height: 48px;
 }
 
 
@@ -208,10 +217,8 @@ li {
 /* Some styles had to be put inline in the home.ejs because the image url's would not pull into through this css file*/
 
 .view_counter {
-	background-size: 100%;
-	background-repeat: no-repeat;
-	width: 200px;
-	height: 200px;
+	width: 180px;
+	height: 180px;
 	padding-top: 20px;
 	padding-right: 0px;
 	padding-left: 0px;
@@ -220,19 +227,22 @@ li {
 	border: 5px solid white;
 	text-align: center;
 	color: green;
-	font-size: 100px;
+	font-size: 90px;
 	font-weight: bold;
+	display: block;
+  	position: relative;
 }
 
-.newbar-btn {
+.arrow_btn {
 	border-radius: 5px;
 	background-color: white;
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
-	width: 100px;
-	height: 30px;
+	font-size: 20px;
+	width: 120px;
+	margin-right: 5%;
+	margin-left: 5%;
 }
 
 
@@ -243,7 +253,7 @@ NAVFOOTER
 
 .footbox {
 	text-align: center;
-	margin-top: 26px;
+	margin-top: 16px;
 	margin-bottom: 26px;
 }
 
@@ -253,9 +263,13 @@ NAVFOOTER
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
-	width: 90px;
-	height: 30px;
+	font-size: 20px;
+	width: 120px;
+	height: 48px;
+}
+
+.patron_number {
+	text-shadow: 1px 1px 1px black;
 }
 
 #disco {

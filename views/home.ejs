@@ -5,21 +5,38 @@
 		<% include ./partials/header %>
 
 
+
 			<!-- Possible modal for the bar information -->
 
 			<h2 class="venue_name"   id="venue_info">
 				<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p><%=venue.name%></h2>
+
+		
+			
+
 			<div class="view_counter container-fluid">
 
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
-				<%=venue.patron_number%>
+				<div class='patron_number'>
+					<%=venue.patron_number%>
+				</div>
 				<style>
-					.view_counter {
+					.view_counter::after {
 
     					/*background-image: url(<%=venue.logo_url%>);
 */
-						opacity: .7;
-    					background-image: url("../images/rio_rita.jpg");
+    					background-image: url("/images/rio_rita.jpg");
+    					width: 100%;
+						height: 100%;
+						background-size: 100%;
+    					content: "";
+  						opacity: 0.6;
+  						top: 0;
+					   left: 0;
+					   bottom: 0;
+					   right: 0;
+					   position: absolute;
+					   z-index: -1; 
 					}
 				</style>
 			</div>
@@ -29,10 +46,17 @@
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
                <form name="bar_button" action="/home" method="GET">
-			    		<input class="newbar-btn" type="submit" name="submit" value="Next Bar">
+			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+  							<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
+						</button>
+			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+  							Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+						</button>
 					</form>
             </div>
          </nav>
+         <input id="pat_number" style="display: none" value="<%= venue.patron_number %>">
+         <input id="capacity" style="display: none" value="<%= venue.capacity %>">
 
 		<% include ./partials/footer %>
 
@@ -51,6 +75,41 @@
 	     // even clicks
 	  			}
 			});
+
+			// number changing color logic
+			var patron_number = $('#pat_number').val();
+			var capacity = $('#capacity').val();
+			var count_fraction = parseFloat(patron_number)/capacity;
+			console.log(count_fraction);
+			if (count_fraction <= 0.3){
+				console.log("<15% red 1");
+				$('.patron_number').css('color', '#FF0000');
+			} 
+			else if (count_fraction <= 0.6){
+				console.log("<30% red 2");
+				$('.patron_number').css('color', '#CC0000');
+			} 
+			else if (count_fraction <= 0.3){
+				console.log("<45% yellow 1");
+				$('.patron_number').css('color', '#FFFF66');
+			}
+			else if (count_fraction <= 0.6){
+				console.log("<60% yellow 2");
+				$('.patron_number').css('color', '#FFF000');
+			} 
+			else if (count_fraction <= 0.3){
+				console.log("<75% green 1");
+				$('.patron_number').css('color', '#00CC66');
+			}
+			else if (count_fraction <= 0.3){
+				console.log("<90% green 2");
+				$('.patron_number').css('color', '#009933');
+			}    
+			else {
+				console.log(">90% disco");
+				// class name of disco div is animated bounceInLeft ///
+			} 
+	
 		</script>
 
 

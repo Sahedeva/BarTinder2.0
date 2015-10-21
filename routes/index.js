@@ -9,6 +9,8 @@ var Token = require('../models/token');
 var mongoose = require('mongoose');
 var venue_response = "";
 
+var login_response = "";
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -17,6 +19,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/clicker', function(req, res, next) {
+
   var test = req.headers.cookie;
   console.log("test: " + test.substring(11));
   var token = test.substring(11);
@@ -97,7 +100,7 @@ router.post('/new_user', function(req,res,next){
 
 
 router.get('/login', function(req, res, next) {
-	res.render('login', {title: 'Login'});
+	res.render('login', {title: 'Login', login_response: login_response});
 });
 
 router.get('/users', function(req, res) {
