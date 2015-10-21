@@ -28,7 +28,9 @@ router.get('/clicker', function(req, res, next) {
       Venue.findOne({'_id': users['venue_id']}, function(err, venues){
         var name = venues['name'];
         var venue_id = venues['_id'];
-        res.render('clicker', {name: name, venue_id: venue_id})
+        var patron_number = venues['patron_number'];
+        var comment = venues['comment'];
+        res.render('clicker', {name: name, venue_id: venue_id, patron_number: patron_number, comment: comment});
       });
     });
   });
@@ -40,7 +42,7 @@ router.post('/tracked', function(req, res, next){
   var comment = req.body.comment;
   var venue_id = req.body.venue_id;
   Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment}, {new: true}, function(err, venue) {
-    res.json(venue);
+    res.redirect('/clicker');
     if (err) {
       console.log('got an error');
     }
