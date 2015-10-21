@@ -24,16 +24,8 @@ body {
 	font-size: 34px;
 }
 
-.comment_box {
-	background-color: black;
-	width: 180px;
-	height: 75px;
-	border: 5px solid white;
-	margin-top: -175px;
-	font-family: 'Comfortaa', cursive;
-	font-size: 16px;
-	color: white;
-	opacity: .7;
+textarea {
+	resize: none;
 }
 
 .input_box {
@@ -86,6 +78,10 @@ NAVHEADER
 	font-family: 'Comfortaa', cursive;
 	float: right;
 	margin-right: 5%;
+}
+
+#admin {
+	color: black;
 }
 
 
@@ -202,23 +198,26 @@ CLICKER(VIEW)
 	background-color: black;
 	color: white;
 	text-align: center;
+	font-size: 24px;
 	width: 80px;
 	height: 50px;
-	padding-top: 7px;
-	font-size: 24px;
+	padding-top: 6px;
+	padding-right: 17px;
 	margin-top: 28px;
+	border-radius: 5px;
+	border: 2px solid white;
 }
 
 .change_comment {
 	background-color: black;
 	width: 180px;
 	height: 75px;
-	border: 5px solid white;
+	border: 3px solid white;
 	font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 	color: white;
 	opacity: .7;
-	margin-top: 55px;
+	margin-top: 47px;
    margin-left: 70px;
 }
 
@@ -275,13 +274,25 @@ li {
 	padding-left: 0px;
 	margin-top: 25px;
 	margin-bottom: 175px;
-	border: 5px solid white;
+	border: 3px solid white;
 	text-align: center;
 	color: green;
 	font-size: 90px;
 	font-weight: bold;
 	display: block;
   	position: relative;
+}
+
+.comment_box {
+	background-color: black;
+	width: 180px;
+	height: 75px;
+	border: 3px solid white;
+	margin-top: -175px;
+	font-family: 'Comfortaa', cursive;
+	font-size: 16px;
+	color: white;
+	opacity: .7;
 }
 
 .arrow_btn {
@@ -302,11 +313,11 @@ li {
 
 #disco {
 	 -webkit-animation-duration: 4s;
-	 width: 174px;
+	 width: 176px;
 	 height: 180px;
 	 position: relative;
 	 top: -24px;
-	 left: -2px;
+	 left: -1px;
 }
 
 
