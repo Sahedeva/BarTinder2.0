@@ -168,9 +168,9 @@ CLICKER(VIEW)
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
+	font-size: 20px;
 	width: 200px;
-	height: 30px;
+	height: 48px;
 }
 
 
@@ -224,15 +224,16 @@ li {
   	position: relative;
 }
 
-.newbar-btn {
+.arrow_btn {
 	border-radius: 5px;
 	background-color: white;
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
-	width: 100px;
-	height: 30px;
+	font-size: 20px;
+	width: 120px;
+	margin-right: 5%;
+	margin-left: 5%;
 }
 
 
@@ -243,7 +244,7 @@ NAVFOOTER
 
 .footbox {
 	text-align: center;
-	margin-top: 26px;
+	margin-top: 16px;
 	margin-bottom: 26px;
 }
 
@@ -253,9 +254,9 @@ NAVFOOTER
 	text-align: center;
 	font-family: 'Comfortaa', cursive;
 	font-size: 700;
-	font-size: 18px;
-	width: 90px;
-	height: 30px;
+	font-size: 20px;
+	width: 120px;
+	height: 48px;
 }
 
 
