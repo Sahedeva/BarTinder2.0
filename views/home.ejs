@@ -5,7 +5,9 @@
 			<h2 class="venue_name" id="venue_info"><%=venue.name%></h2>
 			<div class="view_counter container-fluid">
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
-				<%=venue.patron_number%>
+				<div class='patron_number'>
+					<%=venue.patron_number%>
+				</div>
 				<style>
 					.view_counter::after {
 
@@ -41,6 +43,8 @@
 					</form>
             </div>
          </nav>
+         <input id="pat_number" style="display: none" value="<%= venue.patron_number %>">
+         <input id="capacity" style="display: none" value="<%= venue.capacity %>">
 
 		<% include ./partials/footer %>
 
@@ -59,6 +63,41 @@
 	     // even clicks
 	  			}
 			});
+
+			// number changing color logic
+			var patron_number = $('#pat_number').val();
+			var capacity = $('#capacity').val();
+			var count_fraction = parseFloat(patron_number)/capacity;
+			console.log(count_fraction);
+			if (count_fraction <= 0.3){
+				console.log("<15% red 1");
+				$('.patron_number').css('color', '#FF0000');
+			} 
+			else if (count_fraction <= 0.6){
+				console.log("<30% red 2");
+				$('.patron_number').css('color', '#CC0000');
+			} 
+			else if (count_fraction <= 0.3){
+				console.log("<45% yellow 1");
+				$('.patron_number').css('color', '#FFFF66');
+			}
+			else if (count_fraction <= 0.6){
+				console.log("<60% yellow 2");
+				$('.patron_number').css('color', '#FFF000');
+			} 
+			else if (count_fraction <= 0.3){
+				console.log("<75% green 1");
+				$('.patron_number').css('color', '#00CC66');
+			}
+			else if (count_fraction <= 0.3){
+				console.log("<90% green 2");
+				$('.patron_number').css('color', '#009933');
+			}    
+			else {
+				console.log(">90% disco");
+				// class name of disco div is animated bounceInLeft ///
+			} 
+	
 		</script>
 
 
