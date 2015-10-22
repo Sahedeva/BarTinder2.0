@@ -13,7 +13,7 @@ Help your doormen or bouncers digitally keep track of the patrons entering & exi
   ~Hipsters love BarTinder~
   
 
-Get matched with a cool club or chill bar! Swipe right to view to the next random venue. Tap the venue name to view the address & hours. The number displayed on the venue is the current number of patrons at the location. So party on, Wayne! 
+Get matched with a cool club or chill bar! Swipe right to view to the next random venue. Tap the venue name to view the address & hours. The number displayed on the venue is the current number of patrons at the location out of the full capacity.  So party on, Wayne! 
 
 
 Links:
@@ -50,7 +50,7 @@ Tally Counter Clicker for Doormen: http://bartinder-dev.elasticbeanstalk.com/cli
       •       JSON Web Token
       •       BCrypt
 
-![screen shot 2015-10-22 at 5 07 28 pm](https://cloud.githubusercontent.com/assets/13277130/10679633/8531efb0-78df-11e5-9480-204c17179431.png)
+![screen shot 2015-10-22 at 5 16 30 pm](https://cloud.githubusercontent.com/assets/13277130/10679829/ba0e2b94-78e0-11e5-95ff-5d9692d592d1.png)
 
 ![btbobplanning](https://cloud.githubusercontent.com/assets/13277130/10675734/7cb9a174-78c7-11e5-8bcb-07ad05f1c9df.JPG)
 ![btplanning](https://cloud.githubusercontent.com/assets/13277130/10675732/7cb831e0-78c7-11e5-9481-c4695db20894.JPG)
