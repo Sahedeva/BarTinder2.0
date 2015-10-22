@@ -40,11 +40,11 @@
 			</div>
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
-               <form name="bar_button" action="/home" method="GET">
-			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+               <form name="bar_button" action="/home_arrows" method="POST">
+			    		<button type="submit" name="arrow" class="arrow_btn btn btn-default btn-lg" value="b<%= current_venue %>">
   							<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
 						</button>
-			    		<button type="submit" class="arrow_btn btn btn-default btn-lg">
+			    		<button type="submit" class="arrow_btn btn btn-default btn-lg" name="arrow" value ="f<%= current_venue %>">
   							Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 						</button>
 					</form>
