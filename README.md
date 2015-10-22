@@ -19,9 +19,13 @@ Get matched with a cool club or chill bar! Swipe right to view to the next rando
 Links:
 
 Main/About: http://bartinder-dev.elasticbeanstalk.com
+
 Home View for Patrons: http://bartinder-dev.elasticbeanstalk.com/home
+
 Register Venue Staff: http://bartinder-dev.elasticbeanstalk.com/register
+
 Login for Venue Staff: http://bartinder-dev.elasticbeanstalk.com/login
+
 Tally Counter Clicker for Doormen: http://bartinder-dev.elasticbeanstalk.com/clicker
  ------------------------------------
    Technologies Used:
