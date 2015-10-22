@@ -45,13 +45,3 @@ Tally Counter Clicker for Doormen: http://bartinder-dev.elasticbeanstalk.com/cli
       •       JS Cookie
       •       JSON Web Token
       •       BCrypt
-
-![screen shot 2015-10-22 at 5 02 06 pm](https://cloud.githubusercontent.com/assets/13277130/10679519/b45d53b6-78de-11e5-899f-fc235209ca3e.png)
-![btbobplanning](https://cloud.githubusercontent.com/assets/13277130/10675734/7cb9a174-78c7-11e5-8bcb-07ad05f1c9df.JPG)
-![btplanning](https://cloud.githubusercontent.com/assets/13277130/10675732/7cb831e0-78c7-11e5-9481-c4695db20894.JPG)
-![btscreen1](https://cloud.githubusercontent.com/assets/13277130/10675735/7cb9c744-78c7-11e5-9fda-115cd63e2ba8.JPG)
-![btscreen2](https://cloud.githubusercontent.com/assets/13277130/10675731/7cb74b2c-78c7-11e5-96e0-6186bb95753d.JPG)
-![btscreen3](https://cloud.githubusercontent.com/assets/13277130/10675733/7cb98e64-78c7-11e5-8b5c-f70dd87e27c3.JPG)
-![btscreen4](https://cloud.githubusercontent.com/assets/13277130/10675736/7cbec014-78c7-11e5-9de6-bfd37863c0c0.JPG)
-![btuserstories](https://cloud.githubusercontent.com/assets/13277130/10675737/7cc11706-78c7-11e5-9b08-1e92b726921d.JPG)
-![btwhiteboard](https://cloud.githubusercontent.com/assets/13277130/10675738/7cc74676-78c7-11e5-9ca7-e38fc8767797.JPG)
