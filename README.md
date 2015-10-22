@@ -24,29 +24,29 @@ Register Venue Staff: http://bartinder-dev.elasticbeanstalk.com/register
 Login for Venue Staff: http://bartinder-dev.elasticbeanstalk.com/login
 Tally Counter Clicker for Doormen: http://bartinder-dev.elasticbeanstalk.com/clicker
  ------------------------------------
- Technologies Used:
-    •       Amazon Web Services
-    •       Elastic Beanstalk
-    •       Node.js
-    •       Express
-    •       MongoDB
-    •       Mongoose
-    •       JQuery
-    •       Bootstrap
-    •       Git and GitHub
-    •       Sublime
-    •       Pivotal Tracker
-    •       AJAX
-    •       GoogleDocs
-    •       Photoshop
-    •       ResponseSimulator.com
-    •       Survey Monkey
-    •       Slack
-    •       JS Cookie
-    •       JSON Web Token
-    •       BCrypt
+   Technologies Used:
+      •       Amazon Web Services
+      •       Elastic Beanstalk
+      •       Node.js
+      •       Express
+      •       MongoDB
+      •       Mongoose
+      •       JQuery
+      •       Bootstrap
+      •       Git and GitHub
+      •       Sublime
+      •       Pivotal Tracker
+      •       AJAX
+      •       GoogleDocs
+      •       Photoshop
+      •       ResponseSimulator.com
+      •       Survey Monkey
+      •       Slack
+      •       JS Cookie
+      •       JSON Web Token
+      •       BCrypt
 
-
+![screen shot 2015-10-22 at 5 02 06 pm](https://cloud.githubusercontent.com/assets/13277130/10679519/b45d53b6-78de-11e5-899f-fc235209ca3e.png)
 ![btbobplanning](https://cloud.githubusercontent.com/assets/13277130/10675734/7cb9a174-78c7-11e5-8bcb-07ad05f1c9df.JPG)
 ![btplanning](https://cloud.githubusercontent.com/assets/13277130/10675732/7cb831e0-78c7-11e5-9481-c4695db20894.JPG)
 ![btscreen1](https://cloud.githubusercontent.com/assets/13277130/10675735/7cb9c744-78c7-11e5-9fda-115cd63e2ba8.JPG)
