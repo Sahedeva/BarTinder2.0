@@ -19,21 +19,33 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/clicker', function(req, res, next) {
-
   var test = req.headers.cookie;
-  console.log("test: " + test.substring(11));
-  var token = test.substring(11);
-  Token.findOne({'token': token}, function(err, tokens){
-    User.findOne({'_id': tokens['user_id']}, function(err, users) {
-      Venue.findOne({'_id': users['venue_id']}, function(err, venues){
-        var name = venues['name'];
-        var venue_id = venues['_id'];
-        var patron_number = venues['patron_number'];
-        var comment = venues['comment'];
-        res.render('clicker', {name: name, venue_id: venue_id, patron_number: patron_number, comment: comment});
-      });
-    });
-  });
+  if (test){
+    console.log("test: " + test.substring(11));
+    var token = test.substring(11);
+    Token.findOne({'token': token}, function(err, tokens){
+      if (tokens){
+        User.findOne({'_id': tokens['user_id']}, function(err, users) {
+          Venue.findOne({'_id': users['venue_id']}, function(err, venues){
+            login_response = "Authorized for "+venues['name'];
+            var name = venues['name'];
+            var venue_id = venues['_id'];
+            var patron_number = venues['patron_number'];
+            var comment = venues['comment'];
+            res.render('clicker', {name: name, venue_id: venue_id, patron_number: patron_number, comment: comment});
+          });
+        });
+      } else {
+        login_response = "Login failed";
+        console.log(login_response);
+        res.redirect('/login');
+      }
+    });  
+  } else {
+    login_response = "Login failed";
+    console.log(login_response);
+    res.redirect('/login');
+  }
 });
 
 router.post('/tracked', function(req, res, next){
