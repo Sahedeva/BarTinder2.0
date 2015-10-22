@@ -9,7 +9,7 @@
                <br><br>
                <input class="input_box" type="password" name="password" placeholder="Password...">
                <br><br>
-               <select class="venue_drop" name="venues">  <option>Choose Venue...</option>
+               <select class="venue_drop" name="venues">  <option disabled>Choose Venue...</option>
                   <% for (var i = 0; i<venue_name.length;i++){ %>
                   <option value="<%= venue_id[i] %>"><%= venue_name[i] %></option>
                   <% } %>

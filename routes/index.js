@@ -9,10 +9,13 @@ var Token = require('../models/token');
 var mongoose = require('mongoose');
 var venue_response = "";
 var current_venue = 0;
-var future_venue;
+var random_array = [0];
 var login_response = "";
 var current_venue_array = [0];
 var position = 0;
+var count = 0;
+var rand_array = [0];
+var rand_num;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -200,14 +203,62 @@ router.post('/home_arrows', function(req, res) {
     else {
       Venue.find({}, function(err, venues) {
       // Get back a random variable from the database so you can display on page
-      var rand_num = Math.floor(Math.random()*venues.length); 
-      if (rand_num == current_venue) {
-        rand_num = Math.floor(Math.random()*venues.length);
+      // var rand_gen = function(){
+      //   var rand_num = Math.floor(Math.random()*venues.length);
+      //   for (var i = 0; i<random_array.length; i++){
+      //     if (rand_num == random_array[i]){
+      //       continue;
+      //     }
+      //     else {
+      //       random_array.push(rand_num);
+      //     }
+      //   }
+      // }
+
+      // while 
+
+      // if (count == )
+      
+      // if (rand_num == current_venue) {
+      //   rand_num = Math.floor(Math.random()*venues.length);
+      // } else if (rand_num == current_venue) {
+      //   rand_num = Math.floor(Math.random()*venues.length);
+      // }
+      // var rand_num = Math.floor(Math.random()*venues.length);
+      var repeat= true;
+
+      while (repeat)
+      {
+        rand_num = Math.floor(Math.random()*venues.length); 
+
+        for(var i=0; i<=count; i++)
+        {
+          if (rand_array[i] == rand_num)
+            {
+              repeat=true;
+              break;
+            }
+          else 
+            repeat=false;
+        }
+
+        if(repeat)
+          continue;
       }
+
+      rand_array[count]=rand_num;
+      count++;
+
+
+      if (rand_array.length == venues.length){
+          rand_array = [];
+          count=0;
+        }
+      console.log(rand_array);
       current_venue = rand_num;
       current_venue_array.push(current_venue);
       });
-      if (current_venue_array.length > 3) {
+      if (position > 3) {
         position = 3;
         current_venue_array.shift();
       }
