@@ -7,23 +7,31 @@
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 			<!-- <div id="disco_ball"></div> -->
 
-			<div class="view_counter container-fluid">
+			<div class="view_counter fill container-fluid">
 
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<div class='patron_number'>
 					<!-- <div id="number" style="hidden"> -->
-						<p><%=venue.patron_number%></p>
+						<p id="pat_num" style = "padding-top: 35px"><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></p>
 					<!-- </div> -->
 				</div>
 				<style>
-					.view_counter::after {
-
-    					/*background-image: url(<%=venue.logo_url%>);
+					.fill {
+    						overflow: hidden;
+    						background-size: 100%;
+    						background-position: center;
+    						background-image: url("<%=venue.logo_url%>");
+    						opacity: 0.7;
+								}
+					/*.view_counter::after {
 */
-    					background-image: url("/images/rio_rita.jpg");
-    					width: 100%;
-						height: 100%;
-						background-size: 100%;
+    					/*background-image: url(<%=venue.logo_url%>);
+*//*
+							background-image: url("<%=venue.logo_url%>");*/
+    					/*background-image: url("/images/rio_rita.jpg");*/
+    			/*		width: 100%;
+						min-height: 280px;
+						background-size: 280px 115px;
     					content: "";
   						opacity: 0.6;
   						top: 0;
@@ -31,8 +39,9 @@
 					   bottom: 0;
 					   right: 0;
 					   position: absolute;
-					   z-index: -1; 
-					}
+					   z-index: -1;
+					  background-repeat: no-repeat; 
+					}*/
 				</style>
 			</div>
 			<div class="comment_box container-fluid">
@@ -76,30 +85,18 @@
 			var capacity = $('#capacity').val();
 			var count_fraction = parseFloat(patron_number)/capacity;
 			console.log(count_fraction);
-			if (count_fraction <= 0.15){
-				console.log("<15% red 1");			
-				$('.patron_number').css('color', '#FF0000');
+			if (count_fraction <= 0.30){
+				console.log("<30% Blue");			
+				$('.patron_number').css('color', '#00FFFF');
 			} 
-			else if (count_fraction <= 0.3){
-				console.log("<30% red 2");			
-				$('.patron_number').css('color', '#CC0000');
-			} 
-			else if (count_fraction <= 0.45){
-				console.log("<45% yellow 1");				
-				$('.patron_number').css('color', '#FFFF66');
+			else if (count_fraction <= 0.60){
+				console.log("<60% Yellow");				
+				$('.patron_number').css('color', '#FFFF00');
 			}
-			else if (count_fraction <= 0.6){
-				console.log("<60% yellow 2");			
-				$('.patron_number').css('color', '#FFF000');
-			} 
-			else if (count_fraction <= 0.75){
-				console.log("<75% green 1");			
-				$('.patron_number').css('color', '#00CC66');
+			else if (count_fraction <= 0.90){
+				console.log("<90% Red");			
+				$('.patron_number').css('color', '#FF0040');
 			}
-			else if (count_fraction <= 0.9){
-				console.log("<90% green 2");
-				$('.patron_number').css('color', '#009933');
-			} 
 			else {
 				console.log(">90% disco");
 				// class name of disco div is animated bounceInLeft ///
