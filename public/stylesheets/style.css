@@ -281,7 +281,7 @@ li {
 	margin-bottom: 175px;
 	border: 3px solid white;
 	text-align: center;
-	color: green;
+	color: #00FFFFFF;
 	font-family: 'Limelight';
 	font-size: 45px;
 	font-weight: bold;
@@ -313,8 +313,12 @@ li {
 	margin-left: 5%;
 }
 
-.patron_number {
-	text-shadow: 3px 3px 3px black;
+#pat_num {
+	font-family: 'Limelight';
+	font-size: 45px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 1px 1px 1px white;
 }
 
 #disco {

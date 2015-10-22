@@ -6,13 +6,14 @@
 
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 			<!-- <div id="disco_ball"></div> -->
+			<div id="pat_num" ><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></div>
 
 			<div class="view_counter fill container-fluid">
 
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<div class='patron_number'>
 					<!-- <div id="number" style="hidden"> -->
-						<p id="pat_num" style = "padding-top: 35px"><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></p>
+						<!-- <p id="pat_num" style = "padding-top: 35px"><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></p> -->
 					<!-- </div> -->
 				</div>
 				<style>
@@ -87,18 +88,19 @@
 			console.log(count_fraction);
 			if (count_fraction <= 0.30){
 				console.log("<30% Blue");			
-				$('.patron_number').css('color', '#00FFFF');
+				$('#pat_num').css('color', '#00FFFF');
 			} 
 			else if (count_fraction <= 0.60){
 				console.log("<60% Yellow");				
-				$('.patron_number').css('color', '#FFFF00');
+				$('#pat_num').css('color', '#FFFF00');
 			}
 			else if (count_fraction <= 0.90){
 				console.log("<90% Red");			
-				$('.patron_number').css('color', '#FF0040');
+				$('#pat_num').css('color', '#FF0040');
 			}
 			else {
 				console.log(">90% disco");
+				$('#pat_num').css('color', 'white');
 				// class name of disco div is animated bounceInLeft ///
 				$('.patron_number').html('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" leftframeBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
 			} 
