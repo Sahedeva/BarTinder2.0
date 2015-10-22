@@ -200,10 +200,14 @@ router.post('/home_arrows', function(req, res) {
     else {
       Venue.find({}, function(err, venues) {
       // Get back a random variable from the database so you can display on page
-      current_venue = Math.floor(Math.random()*venues.length); 
+      var rand_num = Math.floor(Math.random()*venues.length); 
+      if (rand_num == current_venue) {
+        rand_num = Math.floor(Math.random()*venues.length);
+      }
+      current_venue = rand_num;
       current_venue_array.push(current_venue);
       });
-      if (current_venue_array.length > 4) {
+      if (current_venue_array.length > 3) {
         position = 3;
         current_venue_array.shift();
       }
