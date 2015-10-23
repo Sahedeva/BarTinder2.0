@@ -16,6 +16,12 @@ var position = 0;
 var count = 0;
 var rand_array = [0];
 var rand_num;
+var venues_global = [];
+
+Venue.find({}, function(err, venues) {
+  venues_global=venues;
+});
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -65,7 +71,7 @@ router.post('/tracked', function(req, res, next){
       console.log('got an error');
     }
   });
-  });
+});
 
 router.get('/setup', function(req, res) {
 
@@ -88,13 +94,14 @@ router.get('/setup', function(req, res) {
 router.get('/register', function(req, res, next) {
   var venue_id = [];
   var venue_name = [];
-  Venue.find({}, function(err, venues) {
-    for (var i = 0; i<venues.length; i++) {
-    venue_name[i] = venues[i]['name'];
-    venue_id[i] = venues[i]['_id'];
-    }
+  // Venue.find({}, function(err, venues) {
+    for (var i = 0; i<venues_global.length; i++) {
+      venue_name[i] = venues_global[i]['name'];
+      venue_id[i] = venues_global[i]['_id'];
+    // }
+  }
   res.render('register', {title: 'Registration', venue_name: venue_name, venue_id: venue_id}); 
-  });
+  // });
 });
 
 router.post('/new_user', function(req,res,next){
@@ -102,18 +109,18 @@ router.post('/new_user', function(req,res,next){
 	var password = req.body.password;
 	var admin = true;
   var venue_id = req.body.venues;
-	var new_user = new User({
-		name: name, 
-		password: password, 
-		admin: admin,
+  var new_user = new User({
+    name: name, 
+    password: password, 
+    admin: admin,
     venue_id: venue_id
-	});
+  });
 
-	new_user.save(function(err) {
+  new_user.save(function(err) {
     if (err) throw err;
 
     console.log('User saved successfully');
-   
+
   });
   res.redirect('/login');
 });
@@ -165,7 +172,7 @@ router.post('/authenticate', function(req, res) {
             if (err) throw err;
 
             console.log('Token saved successfully');
-   
+
           });
           res.json({
             success: true,
@@ -192,16 +199,16 @@ router.get('/home', function(req,res) {
 // Go forward or back along venue array
   //Forward: if at end of array(caps at 4) then get random venue and shift array forward
   //Backward: if at beginning of array stay there
-router.post('/home_arrows', function(req, res) {
-  var direction = req.body.arrow;
-  current_venue = parseInt(direction.substring(1));
-  if (direction[0] === "f"){
-    position++
-    if (position < current_venue_array.length) {
-      current_venue = current_venue_array[position];
-    }
-    else {
-      Venue.find({}, function(err, venues) {
+  router.post('/home_arrows', function(req, res) {
+    var direction = req.body.arrow;
+    current_venue = parseInt(direction.substring(1));
+    if (direction[0] === "f"){
+      position++
+      if (position < current_venue_array.length) {
+        current_venue = current_venue_array[position];
+      }
+      else {
+      // Venue.find({}, function(err, venues) {
       // Get back a random variable from the database so you can display on page
       // var rand_gen = function(){
       //   var rand_num = Math.floor(Math.random()*venues.length);
@@ -229,15 +236,15 @@ router.post('/home_arrows', function(req, res) {
 
       while (repeat)
       {
-        rand_num = Math.floor(Math.random()*venues.length); 
+        rand_num = Math.floor(Math.random()*venues_global.length); 
 
         for(var i=0; i<=count; i++)
         {
           if (rand_array[i] == rand_num)
-            {
-              repeat=true;
-              break;
-            }
+          {
+            repeat=true;
+            break;
+          }
           else 
             repeat=false;
         }
@@ -250,28 +257,28 @@ router.post('/home_arrows', function(req, res) {
       count++;
 
 
-      if (rand_array.length == venues.length){
-          rand_array = [];
-          count=0;
-        }
+      if (rand_array.length == venues_global.length){
+        rand_array = [];
+        count=0;
+      }
       console.log(rand_array);
       current_venue = rand_num;
       current_venue_array.push(current_venue);
-      });
-      if (position > 3) {
-        position = 3;
-        current_venue_array.shift();
-      }
-    }
+      // });
+if (position > 4) {
+  position = 4;
+  current_venue_array.shift();
+}
+}
+}
+else {
+  position--
+  if (position < 0){
+    position = 0;
   }
-  else {
-    position--
-    if (position < 0){
-      position = 0;
-    }
-    current_venue = current_venue_array[position];
-  }
-  res.redirect('/home');
+  current_venue = current_venue_array[position];
+}
+res.redirect('/home');
 });
 
 
