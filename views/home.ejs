@@ -6,6 +6,7 @@
 
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 			<!-- <div id="disco_ball"></div> -->
+
 			<div class="view_counter fill container-fluid">
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<div class='patron_number'>
@@ -45,8 +46,10 @@
 			<div class="comment_box container-fluid">
 				<p><%= venue.comment %></p>
 			</div>
+
 			<div id="pat_num" ><%=venue.patron_number%><span> / </span><%=venue.capacity%>
 			</div>
+
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
                <form name="bar_button" action="/home_arrows" method="POST">
