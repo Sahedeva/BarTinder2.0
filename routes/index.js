@@ -65,7 +65,7 @@ router.post('/tracked', function(req, res, next){
   var patron_number = req.body.counter1;
   var comment = req.body.comment;
   var venue_id = req.body.venue_id;
-  var updated_at = Date.now();
+  var updated_at = Math.floor(Date.now() / 1000);
   Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment, updated_at: updated_at}, {new: true}, function(err, venue) {
     res.redirect('/clicker');
     if (err) {

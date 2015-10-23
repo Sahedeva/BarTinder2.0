@@ -6,13 +6,7 @@
 
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 			<!-- <div id="disco_ball"></div> -->
-<<<<<<< HEAD
-			<!-- <div id="pat_num" ><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></div>
- -->
-=======
-			<div id="pat_num" ><%=venue.patron_number%><span> / </span><%=venue.capacity%></div>
-
->>>>>>> 2c7a9bacd1de73c41ef716c1384d83b2305df90e
+			
 			<div class="view_counter fill container-fluid">
 
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
@@ -55,6 +49,7 @@
 			</div>
 			<div id="pat_num" ><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></div>
 
+		
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
                <form name="bar_button" action="/home_arrows" method="POST">
@@ -143,7 +138,7 @@
               var timeStamp = Math.floor(Date.now() / 1000);
               console.log("current time: " + timeStamp);
               if (venueTimeStamp) {
-              	if (Math.abs(timeStamp - venueTimeStamp) < 1) {
+              	if (Math.abs(timeStamp - venueTimeStamp) <= 3) {
               		console.log(Math.abs(timeStamp - venueTimeStamp))
               		location.reload();
               	}
