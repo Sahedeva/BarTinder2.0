@@ -117,7 +117,7 @@
 		}
 
 
-			setInterval('venueUpdate()', 3000);
+			setInterval('venueUpdate()', 5000);
 			
 			function venueUpdate() {
 				var venue_id = $('#venue_id').val();
@@ -143,7 +143,7 @@
               }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                // alert("Status: " + textStatus); alert("Error: " + errorThrown);
             }
          });
 			};
