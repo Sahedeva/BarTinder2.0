@@ -6,15 +6,8 @@
 
 			<h2 class="venue_name"   id="venue_info"><%=venue.name%></h2>
 			<!-- <div id="disco_ball"></div> -->
-<<<<<<< HEAD
-			<!-- <div id="pat_num" ><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></div>
- -->
-=======
-			<div id="pat_num" ><%=venue.patron_number%><span> / </span><%=venue.capacity%></div>
 
->>>>>>> 2c7a9bacd1de73c41ef716c1384d83b2305df90e
 			<div class="view_counter fill container-fluid">
-
 				<!-- Had to put these styles inline because the url squid tag would not pull in through the css -->
 				<div class='patron_number'>
 					<!-- <div id="number" style="hidden"> -->
@@ -53,7 +46,9 @@
 			<div class="comment_box container-fluid">
 				<p><%= venue.comment %></p>
 			</div>
-			<div id="pat_num" ><%=venue.patron_number%><span style = "font-family: 'Limelight', cursive">/ </span><%=venue.capacity%></div>
+
+			<div id="pat_num" ><%=venue.patron_number%><span> / </span><%=venue.capacity%>
+			</div>
 
 			<nav class="navbar navbar-default navbar-fixed-bottom">
             <div class="footbox">
