@@ -281,8 +281,9 @@ li {
 	margin-bottom: 175px;
 	border: 3px solid white;
 	text-align: center;
-	color: green;
-	font-size: 90px;
+	color: #00FFFFFF;
+	font-family: 'Limelight';
+	font-size: 45px;
 	font-weight: bold;
 	display: block;
   	position: relative;
@@ -312,8 +313,12 @@ li {
 	margin-left: 5%;
 }
 
-.patron_number {
-	text-shadow: 1px 1px 1px black;
+#pat_num {
+	font-family: 'Limelight';
+	font-size: 45px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 1px 1px 1px white;
 }
 
 #disco {
@@ -321,14 +326,28 @@ li {
 	/* -webkit-animation-duration: 1s;
 	 width: 174px;*/
 
-	 -webkit-animation-duration: 4s;
+	 -webkit-animation-duration: 1s;
 	 width: 176px;
-
 	 height: 180px;
 	 position: relative;
 	 top: -24px;
 	 left: -1px;
 }
+
+/*#disco_out {
+
+	/* -webkit-animation-duration: 1s;
+	 width: 174px;*/
+	/* box-shadow: 0 0 1px rgba(0,0,0, 0.05);
+	 -webkit-animation-duration: 2s;
+	 -webkit-backface-visibility: hidden;
+	 width: 176px;
+	 height: 180px;
+	 position: relative;
+	 top: -24px;
+	 left: -1px;*/
+/*}*/
+
 
 
 
