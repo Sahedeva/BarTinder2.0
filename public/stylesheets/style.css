@@ -316,11 +316,12 @@ li {
 }
 
 #pat_num {
-	font-family: 'Limelight';
+	font-family: 'Limelight', cursive;
 	font-size: 45px;
 	font-weight: bold;
 	text-align: center;
 	text-shadow: 1px 1px 1px white;
+	margin-bottom: -15px;
 }
 
 #disco {
