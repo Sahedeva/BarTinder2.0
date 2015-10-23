@@ -58,10 +58,11 @@
   							Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 						</button>
 					</form>
-            </div>
-         </nav>
-         <input id="pat_number" style="display: none" value="<%= venue.patron_number %>">
-         <input id="capacity" style="display: none" value="<%= venue.capacity %>">
+      </div>
+	   </nav>
+	   <input id="pat_number" style="display: none" value="<%= venue.patron_number %>">
+	   <input id="capacity" style="display: none" value="<%= venue.capacity %>">
+	   <input id="venue_id" style="display: none" value="<%= venue['_id'] %>">
 
 		<% include ./partials/footer %>
 
@@ -72,7 +73,8 @@
 	  			clicks++
 	  			if (clicks % 2 == 1) {
 	  				console.log('odd click')
-			 		$('#venue_info').append('<ul><li><span class="info">LOCATION:</span>   <%=venue.location%></li><li><span class="info">HOURS:</span>   <%=venue.hours%></li><li><a href="<%= venue.website_url %>"target="_blank"><%= venue.website_url %></li></ul>')
+
+			 		$('#venue_info').append('<ul><li><span class="info">LOCATION:</span>   <%=venue.location%></li><li><span class="info">HOURS:</span>   <%=venue.hours%></li><li><a href="<%= venue.website_url %>" target="_blank"><%= venue.website_url %></li></ul>')
 	     // odd clicks
 	  			} else {
 	  				console.log('even click')
@@ -102,8 +104,52 @@
 				console.log(">90% disco");
 				$('#pat_num').css('color', 'white');
 				// class name of disco div is animated bounceInLeft ///
-				$('.patron_number').html('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" leftframeBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
-			} 
+				setInterval('disco_ball_gif()', 3000 );
+				function disco_ball_gif(){
+					// setTimeout('disco_out_gif()', 2000);
+					$('.patron_number').html('<iframe  class="animated bounceInLeft" id="disco" src="//giphy.com/embed/jRx59nrqDtXHy" leftframeBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>')
+					
+				}
+
+				function disco_out_gif(){
+					$('.patron_number').html('<iframe  class="animated OutRight" id="disco_out" src="//giphy.com/embed/jRx59nrqDtXHy" leftframeBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/party-ball-lights-jRx59nrqDtXHy"></a></p>');
+				}
+		}
+
+
+			setInterval('venueUpdate()', 3000);
+			
+			function venueUpdate() {
+				var venue_id = $('#venue_id').val();
+				console.log(venue_id);
+				$.ajax({
+            url: '/wasVenueUpdated',
+            dataType: "json",
+            method: "POST",
+            data: {
+              venue_id: venue_id
+              },
+            success: function(data, textStatus, jqXHR){
+            	console.log("data['timestamp: " + data['timestamp']);
+              var venueTimeStamp = parseInt(data['timestamp']);
+              console.log("venue time: " + venueTimeStamp);
+              var timeStamp = Math.floor(Date.now() / 1000);
+              console.log("current time: " + timeStamp);
+              if (venueTimeStamp) {
+              	if (Math.abs(timeStamp - venueTimeStamp) < 3) {
+              		console.log(Math.abs(timeStamp - venueTimeStamp))
+              		location.reload();
+              	}
+              }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+         });
+			};
+
+    
+
 	
 		</script>
 

@@ -65,7 +65,8 @@ router.post('/tracked', function(req, res, next){
   var patron_number = req.body.counter1;
   var comment = req.body.comment;
   var venue_id = req.body.venue_id;
-  Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment}, {new: true}, function(err, venue) {
+  var updated_at = Math.floor(Date.now() / 1000);
+  Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment, updated_at: updated_at}, {new: true}, function(err, venue) {
     res.redirect('/clicker');
     if (err) {
       console.log('got an error');
@@ -133,6 +134,17 @@ router.get('/login', function(req, res, next) {
 router.get('/users', function(req, res) {
   User.find({}, function(err, users) {
     res.json(users);
+  });
+});
+
+router.post('/wasVenueUpdated', function(req, res) {
+  var venue_id = req.body.venue_id;
+  console.log(venue_id);
+  Venue.findOne({'_id': venue_id}, function(err, venue){
+      console.log(venue['updated_at'].getTime());
+      var timestamp = venue['updated_at'].getTime();
+      console.log(timestamp);
+      res.json({ timestamp: timestamp});
   });
 });
 
