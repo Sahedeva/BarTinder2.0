@@ -65,7 +65,7 @@ router.post('/tracked', function(req, res, next){
   var patron_number = req.body.counter1;
   var comment = req.body.comment;
   var venue_id = req.body.venue_id;
-  var updated_at = Math.floor(Date.now() / 1000);
+  var updated_at = Date.now();
   Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment, updated_at: updated_at}, {new: true}, function(err, venue) {
     res.redirect('/clicker');
     if (err) {
@@ -95,14 +95,13 @@ router.get('/setup', function(req, res) {
 router.get('/register', function(req, res, next) {
   var venue_id = [];
   var venue_name = [];
-  // Venue.find({}, function(err, venues) {
-    for (var i = 0; i<venues_global.length; i++) {
-      venue_name[i] = venues_global[i]['name'];
-      venue_id[i] = venues_global[i]['_id'];
-    // }
-  }
+  Venue.find({}, function(err, venues) {
+    for (var i = 0; i<venues.length; i++) {
+      venue_name[i] = venues[i]['name'];
+      venue_id[i] = venues[i]['_id'];
+    }
   res.render('register', {title: 'Registration', venue_name: venue_name, venue_id: venue_id}); 
-  // });
+  });
 });
 
 router.post('/new_user', function(req,res,next){
@@ -312,8 +311,9 @@ router.post('/new_venue', function(req,res,next){
 	var capacity = req.body.capacity;
 	var patron_number = req.body.patron_number;
 	var comment = req.body.comment;
+  var updated_at = Math.floor(Date.now() / 1000);
 	Venue.find({}, function(err, venue){
-		Venue.collection.insert({name: name, location: location, hours: hours, logo_url: logo_url, website_url: website_url, capacity: capacity, patron_number: patron_number, comment: comment});
+		Venue.collection.insert({name: name, location: location, hours: hours, logo_url: logo_url, website_url: website_url, capacity: capacity, patron_number: patron_number, comment: comment, updated_at: updated_at});
 		venue_response = "You successfully added a venue to the database!";
 		res.redirect('/new');
 	});

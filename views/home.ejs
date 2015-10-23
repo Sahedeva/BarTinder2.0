@@ -136,7 +136,7 @@
               var timeStamp = Math.floor(Date.now() / 1000);
               console.log("current time: " + timeStamp);
               if (venueTimeStamp) {
-              	if (Math.abs(timeStamp - venueTimeStamp) < 3) {
+              	if (Math.abs(timeStamp - venueTimeStamp) < 1) {
               		console.log(Math.abs(timeStamp - venueTimeStamp))
               		location.reload();
               	}
