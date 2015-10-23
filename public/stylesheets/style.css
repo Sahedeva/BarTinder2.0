@@ -91,7 +91,7 @@ INDEX(VIEW)
 ********/
 
 h3 {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 .about_img {
@@ -110,11 +110,13 @@ h4 {
   	position: relative;
   	background-color: black;
   	opacity: .8;
-  	margin-top: 80px;
-  	margin-bottom: 80px;
+  	margin-top: 58px;
+  	margin-bottom: 58px;
 }
 
-
+.about_info {
+	color: white;
+}
 
 /********
 NEW(VIEW)
@@ -122,7 +124,7 @@ NEW(VIEW)
 
 .new_admin {
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 130px;
 	margin-bottom: 100px;
 }
 
@@ -314,11 +316,12 @@ li {
 }
 
 #pat_num {
-	font-family: 'Limelight';
+	font-family: 'Limelight', cursive;
 	font-size: 45px;
 	font-weight: bold;
 	text-align: center;
 	text-shadow: 1px 1px 1px white;
+	margin-bottom: -15px;
 }
 
 #disco {
