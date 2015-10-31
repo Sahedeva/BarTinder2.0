@@ -1,62 +1,35 @@
-      <% include ./partials/header %>
+<% include ./partials/header %>
 
-      <h2 id= "clicker_name"> <%= name %> </h2>
-      <form class="clicker" name="clicker" action="/tracked" method="POST">
-    
+  <h2 id= "clicker_name"> <%= name %> </h2>
 
-     <!-- <div>   <label for="name">In</label>
-        <input type="text" name="enter" id="in-clicker" value="+">
-    </div>
-    <div>
-        <label for="name">Out</label>
-        <input type="text" name="exit" id="out-clicker" value="-">
-    </div> -->
-         <div class="clicker_box container-fluid">
-            <div class="row">
-               <span class="col-xs-1"></span>
-               <input class="col-xs-3 minus" type="button" value="-" id="sub" onclick="reduce();" />
-               <span class="col-xs-1"></span>
-               <textarea class="col-xs-2 counter1" id="counter1" name="counter1" rows="1" cols="5"><%= patron_number %></textarea>
-               <span class="col-xs-1"></span>
-               <input class="col-xs-3 plus" type="button" value="+" id="add" onclick="increase();" />
-               <span class="col-xs-1"></span>
-            </div>
+  <form class="clicker" name="clicker" action="/tracked" method="POST">
+    <div class="clicker_box container-fluid">
+      <div class="row">
+         <span class="col-xs-1"></span>
+         <input class="col-xs-3 minus" type="button" value="-" id="sub" onclick="reduce();" />
+         <span class="col-xs-1"></span>
+         <textarea class="col-xs-2 counter1" id="counter1" name="counter1" rows="1" cols="5"><%= patron_number %></textarea>
+         <span class="col-xs-1"></span>
+         <input class="col-xs-3 plus" type="button" value="+" id="add" onclick="increase();" />
+         <span class="col-xs-1"></span>
+      </div>
 
-            <input type="hidden" name="access_token" value="cookie_value">
-            <input type="hidden" name="venue_id" value="<%= venue_id %>">
+      <input type="hidden" name="venue_id" value="<%= venue_id %>">
 
-            <div class="row">
-               <div class="col-xs-12">
-        	         <textarea class="change_comment" name="comment" placeholder="Comment..." id="comment" maxlength="40" cols="25" rows="3"><%= comment %></textarea>
-               </div>
-            </div>
+      <div class="row">
+         <div class="col-xs-12">
+  	         <textarea class="change_comment" name="comment" placeholder="Comment..." id="comment" maxlength="40" cols="25" rows="3"><%= comment %></textarea>
          </div>
-         <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="footbox">
-               <input class="comment-submit-btn" type="submit" value="Update Comment" id="submit">
-            </div>
-         </nav>
-      </form>
+      </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="footbox">
+         <input class="comment-submit-btn" type="submit" value="Update Comment" id="submit">
+      </div>
+    </nav>
+  </form>
 
-      <script>
-
-         var new_value = 0;
-         function increase()
-         {
-            current_value = document.getElementById("counter1").value;
-            new_value = parseInt(current_value) + 1;
-            document.getElementById("counter1").value = new_value;
-         }
-         function reduce()
-         {
-            current_value = document.getElementById("counter1").value;
-            new_value = parseInt(current_value) - 1;
-            if (new_value < 0){
-            	new_value = 0;
-            }
-
-            document.getElementById("counter1").value = new_value;
-         }
-      </script>
-
-     <% include ./partials/footer %>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/javascripts/clicker.js"></script>
+  </body>
+</html>

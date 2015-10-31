@@ -10,6 +10,7 @@ var venueSchema = new mongoose.Schema({
   capacity: String,
   website_url: String,
   comment: String,
+  recent_modified: Boolean,
   created_at: Date,
   updated_at: Date
 });

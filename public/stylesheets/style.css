@@ -187,6 +187,13 @@ CLICKER(VIEW)
 	font-size: 28px;
 }
 
+#response_header {
+	text-align: center;
+	color: beige;
+	font-weight: normal;
+	font-size: 14px;
+}
+
 .minus, .plus {
 	width: 75px;
 	height: 100px;
