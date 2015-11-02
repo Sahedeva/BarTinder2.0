@@ -38,26 +38,17 @@ router.post('/wasVenueUpdated', function(req, res) {
   console.log(venue_id);
   Venue.findOne({'_id': venue_id}, function(err, venue){
       var recent_modified = venue['recent_modified'];
+      if (recent_modified) {
+        Venue.findOneAndUpdate({'_id': venue_id}, {recent_modified: false}, {new: true}, function(err, venue) {
+          console.log("Updated venue: " + venue);
+          if (err) {
+            console.log('got an error');
+          }
+        });
+      }
       res.json({ recent_modified: recent_modified});
   });
 });
-// ajax call to reset recent modified back to false after it refreshes data
-router.post('/home_refreshed', function(req, res, next){
-  venue_id = req.body.venue_id;
-  // current_venue = req.body.current_venue;
-  console.log("home refreshed route: " + venue_id);
-  Venue.findOneAndUpdate({'_id': venue_id}, {recent_modified: false}, {new: true}, function(err, venue) {
-    console.log("Updatde venue: " + venue);
-    res.json({
-            success: true,
-            message: 'Venue no longer reads as recently modified.'
-            });
-    if (err) {
-      console.log('got an error');
-    }
-  });
-});
-
 //Bouncer's screen to check in and out patrons and update comments
   //Get route to display form
 router.get('/clicker', function(req, res, next) {
@@ -91,18 +82,50 @@ router.get('/clicker', function(req, res, next) {
     res.redirect('/login');
   }
 });
-  //post route to update database and to make recent modified variable true
+  //post route to update comment and to make recent modified variable true
 router.post('/tracked', function(req, res, next){
-  var patron_number = req.body.counter1;
   var comment = req.body.comment;
   var venue_id = req.body.venue_id;
   var recent_modified = true;
-  Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number, comment: comment, recent_modified: recent_modified}, {new: true}, function(err, venue) {
-    res.redirect('/clicker');
+  Venue.findOneAndUpdate({'_id': venue_id}, {comment: comment, recent_modified: recent_modified}, {new: true}, function(err, venue) {
+    res.json({
+            success: true,
+            message: 'Venue no longer reads as recently modified.'
+            });
     if (err) {
       console.log('got an error');
     }
   });
+});
+  //post route to update patron number and to make recent modified variable true
+router.post('/clicker_update', function(req, res, next){
+  var patron_number = req.body.patron_number;
+  var comment = req.body.comment;
+  console.log(comment);
+  var venue_id = req.body.venue_id;
+  var recent_modified = true;
+  if (comment) {
+    console.log("if no comment entered - shouldn't see this");
+    Venue.findOneAndUpdate({'_id': venue_id}, {comment: comment, patron_number: patron_number, recent_modified: recent_modified}, {new: true}, function(err, venue) {
+      res.json({
+              success: true,
+              message: 'Venue no longer reads as recently modified.'
+              });
+      if (err) {
+        console.log('got an error');
+      }
+    });
+  } else {
+    Venue.findOneAndUpdate({'_id': venue_id}, {patron_number: patron_number,recent_modified: recent_modified}, {new: true}, function(err, venue) {
+      res.json({
+              success: true,
+              message: 'Venue no longer reads as recently modified.'
+              });
+      if (err) {
+        console.log('got an error');
+      }
+    });
+  }
 });
 
 // New User registration

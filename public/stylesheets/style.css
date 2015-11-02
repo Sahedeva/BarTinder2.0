@@ -175,7 +175,7 @@ CLICKER(VIEW)
 
 .clicker_box {
 	padding-left: 30px;
-	margin-top: 65px;
+	margin-top: 55px;
 }
 
 #clicker_name {
@@ -185,6 +185,37 @@ CLICKER(VIEW)
 	font-weight: 300;
 	font-family: 'Comfortaa', cursive;
 	font-size: 28px;
+}
+
+#total_span {
+	font-size: 16px;
+	color: white;
+	margin-top: 30px;
+	opacity: 0.7;
+}
+
+.total_entrants {
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	opacity: 0.8;
+	margin-top: 40px;
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid white;
+}
+
+#reset_button {
+	background-color: #303030;
+	opacity: 0.8;
+	color: white;
+	font-size: 16px;
+	margin-top: 10px;
+	padding-right: 5px;
+	border-radius: 5px;
+	border: 1px solid #404040;
 }
 
 #response_header {

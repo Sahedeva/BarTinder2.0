@@ -41,9 +41,7 @@ function ajax_page_load() {
 
 var ven_up
 function home_render(current_venue){
-	if (ven_up){
 	clearInterval(ven_up);
-	}
 	var clicks = 0;
 	$.ajax({
 		url: '/home_render',
@@ -139,6 +137,7 @@ function advance() {
     	current_venue = current_venue_array[position];
     	console.log("current venue if pos < arraylength: "+current_venue);
 			storage_setter(current_venue,position,rand_num,rand_array,count,current_venue_array, venues_length);
+			clearInterval(ven_up);
 			home_render(current_venue);
   	}
   	else {
@@ -181,6 +180,7 @@ function advance() {
 			  	console.log("Current venue array after shift (going beyond 4 memory places): "+current_venue_array);
 				}
 			storage_setter(current_venue,position,rand_num,rand_array,count,current_venue_array,venues_length);
+			clearInterval(ven_up);
 			home_render(current_venue);
 		}		
 };
@@ -200,6 +200,7 @@ function backward() {
 	localStorage.setItem("current_venue", current_venue);
 	localStorage.setItem("position", position);
 	localStorage.setItem("current_venue_array", JSON.stringify(current_venue_array));
+	clearInterval(ven_up);
 	home_render(current_venue);
 };
 
@@ -246,23 +247,13 @@ function venueUpdate(venue_id) {
     success: function(data, textStatus, jqXHR){
       recent_modified = data['recent_modified'];
       if (recent_modified) {
-      	$.ajax({
-      		url: '/home_refreshed',
-    			dataType: "json",
-    			method: "POST",
-    			data: {
-      			venue_id: venue_id
-      		},
-    			success: function(data, textStatus, jqXHR){
-    				current_venue = localStorage.getItem("current_venue");
-    				home_render(current_venue);
-      		},
-      		error: function(XMLHttpRequest, textStatus, errorThrown){
-    			}
-      		});
-    		}
-    	},
-    	error: function(XMLHttpRequest, textStatus, errorThrown){
+      	console.log("you should only see this if recent modified is true: recent modified is "+recent_modified);
+      	current_venue = localStorage.getItem("current_venue");
+      	clearInterval(ven_up);
+    		home_render(current_venue);
     	}
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown){
+    }
  	});
 };

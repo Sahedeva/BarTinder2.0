@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 
   <h2 id= "clicker_name"> <%= name %> </h2>
-
+  
   <form class="clicker" name="clicker" action="/tracked" method="POST">
     <div class="clicker_box container-fluid">
       <div class="row">
@@ -14,13 +14,20 @@
          <span class="col-xs-1"></span>
       </div>
 
-      <input type="hidden" name="venue_id" value="<%= venue_id %>">
+      <input type="hidden" name="venue_id" id="venue_id" value="<%= venue_id %>">
 
       <div class="row">
          <div class="col-xs-12">
   	         <textarea class="change_comment" name="comment" placeholder="Comment..." id="comment" maxlength="40" cols="25" rows="3"><%= comment %></textarea>
          </div>
       </div>
+      <div class="row">
+         <span id="total_span" class="col-xs-5">Total Entrants for the Day</span>
+         <textarea class="col-xs-2 total_entrants" id="total_entrants" name="total_entrants" rows="1" cols="5"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-xs-2"><button id="reset_button" type="button">Reset</button></div>
+      </div>  
     </div>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="footbox">
